@@ -1,0 +1,30 @@
+.title {
+  width: 690rpx;
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:20px;
+  text-align: center;
+}
+.footer {
+  width: 700rpx;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.footer .cell-1{
+  width: 350rpx;
+  text-align: left;
+}
+.footer .cell-1 image{
+  width: 64rpx;
+  margin-left:60rpx;
+  margin-bottom: -20rpx;
+}
+.footer .cell-2{
+  width: 350rpx;
+  text-align: right;
+}
+.footer .cell-2 image{
+  width: 64rpx;
+  margin-bottom: -20rpx;
+}

@@ -1,0 +1,59 @@
+.unit {
+  background-color:#fff;
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 1px;
+  position: relative;
+  font-size: 14px;
+}
+.row {
+  display: flex;
+  flex-direction:row;
+}
+.cell-1 {
+	width:60rpx;
+}
+.cell-1 image{
+	width:42rpx;
+	height: 42rpx;
+  position: relative;
+  top:10rpx;
+  margin-left: 10rpx;
+}
+.cell-2 {
+	width:250rpx;
+}
+.cell-3 {
+	width:200rpx;
+}
+.cell-4 {
+	width:240rpx;
+  text-align: center
+}
+.form-unit {
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 2rpx;
+  position: relative;
+  border-bottom: 2rpx #ddd solid;
+  display: flex;
+  flex-direction:row;
+}
+.form-unit .txt{
+	width:40%;
+}
+.form-unit .content{
+	width:60%;
+  text-align: right;
+}
+.form-unit .content input{
+  margin-top: 15rpx;
+}
+.form-unit .content image{
+  width: 50rpx;
+  height:50rpx;
+  margin-left: 8rpx;
+  margin-top: 15rpx;
+}

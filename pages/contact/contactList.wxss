@@ -1,0 +1,86 @@
+.header {
+  width: 100%;
+  height: 50px;
+}
+.header input {
+  width:94%;
+  background-color:#fff;
+}
+.placeholder {
+  text-align: center;
+}
+.margin {
+  width:100%;
+  height:20px;
+  background-color:#fff;
+}
+.contact-unit {
+  width:100%;
+  background-color: #fff;
+}
+.contact-unit .contact-class{
+  width:100%;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border-top: 1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+  margin-bottom:-1px; 
+}
+.contact-unit .class-unit{
+  width:720rpx;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border-top: 1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+  margin-bottom:-1px; 
+  margin-left:30rpx;
+}
+.contact-unit .contact-class.active,.contact-unit .class-unit.active{
+   color:#2595FC;
+}
+.contact-unit .contact-user{
+  width:100%;
+}
+.contact-unit .contact-class .title,.contact-unit .class-unit .title{
+  float:left;
+  padding-left:10px;
+}
+.contact-unit .contact-class .open ,.contact-unit .class-unit .open{
+  width:15px;
+  float:right;
+  margin-top:15px;
+  margin-right:10px;
+}
+.contact-unit .contact-class .close ,.contact-unit .class-unit .close{
+  width:10px;
+  float:right;
+  margin-top:12px;
+  margin-right:10px;
+}
+.contact-unit .contact-user .user-unit{
+    width:700rpx;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    border-bottom:1px #ddd solid;
+    margin-bottom:-1px; 
+    
+}
+.contact-unit .contact-user .user-unit .user-icon{
+    width:40px;
+    margin-top:5px;
+    float: left;
+    margin-left:20px;
+}
+.contact-unit .contact-user .user-unit .user-name{
+    margin-top:17px;
+    padding-left:10px;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

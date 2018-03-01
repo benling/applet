@@ -1,0 +1,84 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#FFFFFF;">
+  <view style="width:100%;background-color:#FFFFFF;padding-top:10px;">
+    <view class="form-unit {{isExistSchool}}" style="margin-top:10px;width:750rpx;">
+      <radio-group class="radio-group" bindchange="radioChange" style="text-align:center;">
+        <label class="radio">
+          <radio value="1" checked="true" checked="true"/>家长
+        </label>
+        <label class="radio" style="margin-left:50px;">
+          <radio value="2" />老师
+        </label>
+      </radio-group>
+    </view>
+    <view class="{{stuShow}}">
+        <view class="form-unit" style="margin-top:20px;width:690rpx;">
+          <view class="col-text">找学生：</view>
+          <view class="col-value" style="width:350rpx;">
+              <input class="input" type="text" bindinput="stuInput"  maxlength="16" placeholder="学生号/IMEI" style="width:290rpx;padding:10px 10rpx;"/>
+          </view>
+          <view style="width:120rpx;">
+               <button type="primary" class="primary-btn"  bindtap="queryHandle" style="width:120rpx;font-size:12px;padding:5px 0;margin-top:8px;">查找</button>
+          </view>
+        </view>
+    </view>
+    <view class="{{schoolShow}}">
+      <view class="form-unit" style="margin-top:20px;">
+        <view class="col-text">手机号：</view>
+        <view class="col-value">
+            <input class="input" type="number" bindinput="smobileInput" maxlength="11" placeholder="请输入手机号" style="width:395rpx;padding:10px 20rpx;"/>
+        </view>
+      </view>
+      <view class="form-unit" style="margin-top:20px;">
+        <view class="col-text">邀请码：</view>
+        <view class="col-value">
+            <input class="input" type="text" bindinput="scodeInput" maxlength="4" placeholder="请输入邀请码" style="width:395rpx;padding:10px 20rpx;"/>
+        </view>
+      </view>
+    </view>
+      <view class="{{hideInfo}}">
+        <view class="form-unit">
+          <view class="col-text">学校名：</view>
+          <view class="col-value">
+              <input class="input" type="text" disabled="true" value="{{schoolName}}" style="width:395rpx;padding:10px 20rpx;"/>
+          </view>
+        </view>
+        <view class="form-unit">
+          <view class="col-text"><text>班</text><text style="padding-left:15px;">级</text>：</view>
+          <view class="col-value">
+              <input class="input" type="text" disabled="true" value="{{className}}" style="width:395rpx;padding:10px 20rpx;"/>
+          </view>
+        </view>
+        <view class="form-unit">
+          <view class="col-text"><text>姓</text><text style="padding-left:15px;">名</text>：</view>
+          <view class="col-value">
+              <input class="input" type="text" disabled="true" value="{{name}}" style="width:395rpx;padding:10px 20rpx;"/>
+          </view>
+        </view>
+        <view class="form-unit">
+          <view class="col-text"><text>性</text><text style="padding-left:15px;">别</text>：</view>
+          <view class="col-value">
+              <input class="input" type="text" disabled="true" value="{{sex == 1 ? '男' : (sex == 2?'女':'')}}" style="width:395rpx;padding:10px 20rpx;"/>
+          </view>
+        </view>
+        <view class="form-unit">
+          <view class="col-text"><text>关</text><text style="padding-left:15px;">系</text>：</view>
+          <view class="col-value">
+              <view class="flex-row" style="display: flex;">
+                  <view class="flex-view-item" style="width: 40%;">
+                      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                        <view class="picker">
+                          <text class="picker-text">{{array[index]}}</text>
+                        </view>
+                      </picker>
+                  </view>
+                  <view class='flex-view-item {{hideInput}}' style="width: 53%;">
+                      <input class="input" type="text" maxlength="8" bindinput="otherEventHandle"  style="width: 80%;padding:10px 5px;"/>
+                  </view>
+              </view>
+          </view>
+        </view>
+      </view>
+    <button type="primary" class="primary-btn"  loading="{{loading}}" disabled="{{disabled}}" bindtap="save" style="margin: 30px 5px;">保存</button>
+  </view>
+</view>

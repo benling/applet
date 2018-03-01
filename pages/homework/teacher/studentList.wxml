@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container" style="padding-top:0px;">
+   <!--<view class="header">
+        <input class="input"  type="text" placeholder="搜索" placeholder-class="placeholder" style="width:94%;"/>
+  </view>-->
+  <view style="width:100%;height:10px;background-color:#fff;"></view>
+  <view class="margin"></view>
+  <view class="contact-unit" wx:for="{{list}}" wx:key="{{index}}" wx:for-item="item">
+      <view class="contact-class {{item.open?'active':''}}" bindtap="categoryTap" data-index="{{index}}">
+          <text  class="title">{{item.name}}</text>
+          <image src="{{item.open?'/images/contact/open.png':'/images/contact/close.png'}}" class="{{item.open?'open':'close'}}" mode="widthFix"></image>
+      </view>
+      <view class="contact-user {{item.open?'show':'hide'}}">
+          <view class="user-unit" wx:for="{{item.studentList}}" wx:key="id" wx:for-item="user" wx:for-index="index1" bindtap="userTap" data-id="{{user.homeworkId}}" data-stuid="{{user.studentId}}">
+              <view class="user-name">{{user.studentName}}</view>
+          </view>
+      </view>
+  </view>
+</view>

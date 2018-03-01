@@ -1,0 +1,86 @@
+.header {
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.unit {
+  background-color:#fff;
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 1px;
+  position: relative;
+}
+.title {
+  margin-top:20rpx;
+  background-color: #fff;
+  padding:20rpx;
+}
+.title image{
+  width:48rpx;
+  margin-bottom: -16rpx;
+  margin-right:15rpx;
+}
+.week {
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  position: relative;
+}
+.week .day {
+  width: 107rpx;
+  text-align: center;
+}
+.week .day.active text{
+  display: inline-block;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background-color: #48C23D;
+  border-radius: 50%;
+  color: #fff;
+}
+.form-unit {
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 2rpx;
+  position: relative;
+  border-bottom: 2rpx #ddd solid;
+  display: flex;
+  flex-direction:row;
+}
+.form-unit .txt{
+	width:40%;
+}
+.form-unit .content{
+	width:60%;
+  text-align: right;
+}
+.form-unit .content input{
+  margin-top: 15rpx;
+}
+.form-unit .content image{
+  width: 50rpx;
+  height:50rpx;
+  margin-left: 8rpx;
+  margin-top: 15rpx;
+}
+.cell-1 {
+  width:370rpx;
+  float:left;
+  padding-left:30rpx;
+}
+.cell-2 {
+  width:320rpx;
+  float:right;
+  padding-right:30rpx;
+  text-align: right;
+}
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}

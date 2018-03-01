@@ -1,0 +1,43 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.img-cell{
+  width: 210rpx;
+  display: inline-block;
+  position: relative;
+}
+.img-cell .img{
+  width: 170rpx;
+  height: 170rpx;
+}
+.img-cell .deleteImg{
+  width:24px;
+  position:absolute;
+  right:30rpx;
+  top:-5px;
+}
+.textarea {
+  width:630rpx;
+  height:150px;
+  padding: 20rpx;
+}
+.yuyin{
+  width: 100px;
+  height: 30px;
+}
+.del-img{
+  width:22px;
+  height:22px;
+  margin-bottom:5px;
+  margin-left:10px;
+}

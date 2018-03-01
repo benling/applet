@@ -1,0 +1,19 @@
+
+.title {
+  width:690rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.msg {
+  width:690rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.area {
+  width:96%;
+  height:100px;
+  border:1px #ddd solid;
+  padding: 2%;
+}
+

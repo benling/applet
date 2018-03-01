@@ -1,0 +1,21 @@
+<view class="container" style="height:{{height}}px;padding-top:10px;">
+  <view class="unit" bindtap="updatetap">
+    <image src="/images/safety/call.png"></image>
+    <text>修改手机号码</text>
+  </view>
+  <view class="unit"  bindtap="deletetap">
+    <image src="/images/safety/famliy_number.png"></image>
+    <text>解除关系</text>
+  </view>
+  <modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+      <view class="form-unit" style="margin-top:20rpx;">
+        <view class="txt">原手机号</view>
+        <view class="content"><input  maxlength="11" value="{{old}}" disabled="true"/></view>
+      </view>
+      <view class="form-unit">
+        <view class="txt">新手机号</view>
+        <view class="content"><input  maxlength="11" bindinput="mobileInput" value="{{mobile}}" placeholder="请输入新手机号"/></view>
+      </view>
+      <view style="width:100%;height:50rpx;"></view>
+  </modal> 
+</view>

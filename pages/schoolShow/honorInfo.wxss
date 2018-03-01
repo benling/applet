@@ -1,0 +1,32 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+}
+.header .menu {
+  width:187.5rpx;
+  text-align: center;
+  font-size: 32rpx; 
+}
+.header .menu.active {
+  position: relative;
+}
+.header .menu.active view{
+  width: 67.5rpx;
+  height: 3px;
+  position: absolute;
+  bottom: -1px;
+  left: 60rpx;
+  background-color: #f08537;
+}
+.title {
+  width: 700rpx;
+  font-size:24px;
+  font-weight:bold;
+  margin-bottom:20px;
+  margin-top:20px;
+  text-align: center;
+}

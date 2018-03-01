@@ -1,0 +1,68 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:700rpx;
+  margin:25rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -1px 1px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.center .unit .weeks-view {
+  width:700rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+}
+.center .unit .weeks-view .week{
+  width:90rpx;
+  text-align: center;
+}
+.center .unit .morning-view,
+.center .unit .afternoon-view{
+  width:700rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom:1px #ddd solid;
+  border-top:1px #ddd solid;
+}
+.center .unit .morning-view .schedule-view,
+.center .unit .afternoon-view .schedule-view{
+  width:630rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+}
+.center .unit .morning-view .schedule-view:last-child,
+.center .unit .afternoon-view .schedule-view:last-child{
+  border-bottom:none;
+}
+.center .unit .morning-view .schedule-view .sub,
+.center .unit .afternoon-view .schedule-view .sub{
+  width:90rpx;
+  text-align: center;
+  border:1px #ddd solid;
+  padding:10px 0;
+  margin-bottom:-1px;
+  margin-right:-1px;
+  border-top: none;
+}
+.bottom {
+  width:750rpx;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:50px;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+  display:flex;
+  flex-direction: row;
+}
+.bottom .menu {
+  width:375rpx;
+  text-align:center;
+  margin-top:5px;
+}

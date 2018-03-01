@@ -1,0 +1,70 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+  <view class="center">
+      <view class="unit">
+          <view class="header">
+              <view style="width:320rpx;">{{item.subjectName}}作业</view>
+              <view style="width:350rpx;text-align:right;">{{item.createTime}}</view>
+          </view>
+          <view class="content">
+              <view>{{item.content}}</view>
+              <view style="margin-top:10px;" wx:for="{{item.audios}}" wx:key="{{index}}">
+                  <block wx:if="{{item.status == 1}}">
+                      <image src="/images/homework/yuyin.png" class="yuyin" bindtap="playtap" data-status="1" data-index="{{index}}"></image>
+                  </block>
+                  <block wx:if="{{item.status == 2}}">
+                    <image src="/images/homework/play.gif" class="yuyin" bindtap="playtap" data-status="2" data-index="{{index}}"></image>
+                  </block>
+              </view>
+          </view>
+          <view wx:if="{{item.imgs.length > 0}}" class="img">
+              <view style="margin-top:3rpx;">
+                <view class="img-cell" wx:for="{{item.imgs}}" wx:key="{{index}}">
+                  <image src="{{item}}" style="width:80px;height:80px;" bindtap="viewImgTap" data-index="{{index}}"></image>
+                </view>
+              </view>
+          </view>
+          <block wx:if="{{item.status == 1}}">
+            <view class="footer" bindtap="replytap" data-type="{{item.replyType}}" data-hid="{{item.homeworkId}}" data-pid="{{item.pid}}">
+                <view><image src="/images/homework/reply.png" style="width:14px;height:14px;margin-bottom:-2px;"></image> 回复答案</view>
+            </view>
+          </block>
+      </view>
+      <view class="unit" wx:if="{{item.status != 1}}">
+          <view class="header">
+              <view style="width:320rpx;">{{item.studentName}}的答案</view>
+              <view style="width:350rpx;text-align:right;">{{item.replyTime}}</view>
+          </view>
+          <view class="content">
+              <view>{{item.replyContent}}</view>
+              <view style="margin-top:10px;" wx:for="{{item.replyAudios}}" wx:key="{{index}}">
+                  <block wx:if="{{item.status == 1}}">
+                     <image src="/images/homework/yuyin.png" class="yuyin" bindtap="replyplaytap" data-status="1" data-index="{{index}}"></image>
+                  </block>
+                  <block wx:if="{{item.status == 2}}">
+                    <image src="/images/homework/play.gif" class="yuyin" bindtap="replyplaytap" data-status="2" data-index="{{index}}"></image>
+                  </block>
+              </view>
+              <view style="margin-top:10px;">
+                <view class="img-cell" wx:for="{{item.replyImgs}}" wx:key="{{index}}">
+                  <image src="{{item}}" style="width:80px;height:80px;" bindtap="viewReplyImgTap" data-index="{{index}}"></image>
+                </view>
+              </view>
+          </view>
+      </view>
+      <view class="unit" wx:if="{{item.status == 3}}">
+          <view class="header">
+              <view style="width:320rpx;">老师点评</view>
+              <view style="width:350rpx;text-align:right;">{{item.markTime}}</view>
+          </view>
+          <view class="content">{{item.markContent}}</view>
+          <view class="footer">
+            <view style="margin-left:22rpx;">给的红花数:
+            <block wx:for="{{scoreList}}" wx:key="{{index}}">
+                <image src="/images/homework/xin1.png" class="flower"></image>
+            </block>
+            </view>
+          </view>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+<view class="container" style="background-color:#fff;">
+  <view class="center">
+    <view class="unit">
+        <view class="header">
+            <view class="header-1">
+                <image src="{{item.avatar_url}}" style="border-radius: 50%;width:42px;" mode="widthFix"></image>
+            </view>
+            <view class="header-2">
+                <view>{{item.username}}的{{item.relation}}<text class="CE">{{item.roleName}}</text></view>
+                <view>{{item.createTime}}</view>
+            </view>
+        </view>
+        <view class="content">{{item.content}}</view>
+        <view class="footer">
+            <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" bindtap="viewImgTap" class="cell">
+                <image src="{{img}}" style="width:95%;height:80px;"></image>
+            </view>
+        </view>
+        <block wx:if="{{item.status==2}}">
+          <view class="content">回复：{{item.replyContent}}</view>
+        </block>
+    </view>
+  </view>
+</view>

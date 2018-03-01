@@ -1,0 +1,100 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+}
+.header .menu {
+  width:187.5rpx;
+  text-align: center;
+  font-size: 32rpx; 
+}
+.header .menu.active {
+  position: relative;
+}
+.header .menu.active view{
+  width: 67.5rpx;
+  height: 3px;
+  position: absolute;
+  bottom: -1px;
+  left: 60rpx;
+  background-color: #f08537;
+}
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.unit .top{
+	width:650rpx;
+  padding:20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.unit .top .top-1{
+	width:110rpx;
+}
+.unit .top .top-2{
+	width:540rpx;
+}
+.unit .content{
+	width:630rpx;
+  padding:20rpx 30rpx;
+}
+.unit .footer{
+	width:630rpx;
+  padding:10rpx 0;
+  margin:0 30rpx;
+  font-size: 14px;
+}
+.unit .footer .cell{
+	width:210rpx;
+  text-align: center;
+  display: inline-block;
+}
+.CE{
+	display: inline-block;
+	width: auto;
+	border: 1px solid #14d212;
+	color: #14d212;
+	text-align:center;
+  font-size: 12px;
+	margin-left: 15px;
+  padding:5rpx 10rpx;
+  margin-bottom:5rpx;
+}
+.bottom {
+  width:100%;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:50px;
+  text-align: center;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+}
+.wanchengInfo{
+	width:40%;
+	background: #14d212;
+	margin:5px auto;
+	color:#fff;
+	padding: 4px 0 !important;
+}
+.area-panel {
+  width: 600rpx;
+  margin:20rpx 30rpx;
+  padding: 15rpx;
+  background-color: #fff;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+}

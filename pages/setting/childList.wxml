@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="{{listChoseInfo.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <view wx:for="{{listChoseInfo}}" wx:key="{{index}}" class="school-unit" wx:if="{{item.roleId == 'D'}}">
+    <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" data-index="{{index}}" class="inner txt" style="{{item.txtStyle}};padding:7px 0;">
+        <view class="left" data-index="{{index}}">
+          <image src="{{item.logoUrl}}" style="width:130rpx;height:60px;" data-index="{{index}}"></image>
+        </view>
+        <view  class="center" data-index="{{index}}">
+            <view class="school-name" style="font-size: 14px;" data-index="{{index}}"><text data-index="{{index}}">{{item.schoolName}}</text></view>
+            <view style="margin-top:5px;font-size: 12px;" data-index="{{index}}">
+              <text data-index="{{index}}">姓名：{{item.name}}</text>
+              <text style="margin-left:20rpx;" data-index="{{index}}">学号：{{item.studentNo}}</text>
+            </view>
+            <view style="margin-top:5px;font-size: 12px;" data-index="{{index}}">
+              <text data-index="{{index}}">班级：{{item.className}}</text>
+            </view>
+        </view>
+     </view>
+     <view class="inner del" bindtap="deltap" data-id="{{item.refId}}" data-pid="{{item.parentsId}}" data-sid="{{item.studentId}}" style="height:78px;line-height:78px;">解绑</view>
+  </view>
+</view>

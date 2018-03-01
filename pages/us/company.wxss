@@ -1,0 +1,37 @@
+.header {
+  height: 40px;
+  line-height: 40px;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+}
+.header .menu {
+  width:375rpx;
+  text-align: center;
+  font-size: 32rpx; 
+}
+.header .menu.active {
+  position: relative;
+}
+.header .menu.active view{
+  width: 125rpx;
+  height: 2px;
+  position: absolute;
+  bottom: -1px;
+  left: 125rpx;
+  background-color: #f08537;
+}
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}

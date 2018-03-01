@@ -1,0 +1,53 @@
+.header {
+  width:100%;
+  height: 90rpx;
+  background-color: #fff;
+  text-align: center;
+}
+.header slider{
+  width:400rpx;
+}
+.header .cell-1 {
+  width: 150rpx;
+  float: left;
+  margin-top: 16rpx;
+}
+.header .cell-2 {
+  width: 450rpx;
+  float: left;
+}
+.header .cell-3 {
+  width: 150rpx;
+  float: left;
+  margin-top: 16rpx;
+}
+.bottom {
+  width:100%;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:45px;
+  line-height:45px;
+  vertical-align: middle;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+}
+.bottom .cell-1 {
+  float:left;
+  width:60%;
+}
+.bottom .cell-2 {
+  float:right;
+  width:40%;
+  text-align:center;
+}
+.bottom .cell-2 button{
+  width: 80%;
+  margin-top: 16rpx;
+  background-color: #48C23D;
+}
+.bottom .cell-1 input{
+  height:80rpx;
+  padding-left:20rpx;
+  padding-top:6rpx;
+}

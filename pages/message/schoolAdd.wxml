@@ -1,0 +1,115 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;padding-bottom:45px;">
+    <view class="center">
+        <form bindsubmit="formSubmit">
+          <view class="unit" style="padding-bottom:20px;">
+            <loading hidden="{{hiddenLoading}}">保存数据中</loading>
+            <picker bindchange="bindTypeChange" value="{{tindex}}" range="{{typeList}}" range-key="name">
+              <view class="picker">
+                <view class="chose-class">
+                  <view style="width:80rpx;">
+                    类型
+                  </view>
+                  <view style="width:470rpx;text-align: center;">
+                    <text class="picker-text">{{typeList[tindex].name}}</text>
+                  </view>
+                  <view style="width:80rpx;text-align:right;">
+                    <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:10px;" mode="widthFix"/>
+                  </view>
+                </view>
+              </view>
+            </picker>
+            <view class="picker">
+              <view class="range-class">
+                <view style="width:80rpx;">
+                  范围
+                </view>
+                <view style="width:470rpx;text-align: center;" bindtap="rangetap" data-status="open">
+                  <text class="picker-text">{{range}}</text>
+                </view>
+                <view style="width:80rpx;text-align:right;" bindtap="rangetap" data-status="open">
+                  <image src="/images/my/icon-arrow.png" wx:if="{{tid != 0}}" style="width:10px;height:16px;margin-right:10px;" mode="widthFix"/>
+                </view>
+              </view>
+            </view>
+            <view class="chose-class" style="padding:0;height:55px;border: 1px #ddd solid;">
+                <input bindinput="titleInput" type="text" maxlength="16" placeholder="请输入标题" style="width:590rpx;padding:15px 20rpx;"/>
+            </view>
+            <view style="width:630rpx;margin:30rpx;">
+                <textarea bindblur="textBlur" name="context" class="area" wx:if="{{!showModalStatus}}"  placeholder="请输入公告内容..." value="{{evaContent}}" maxlength="2048" />
+            </view>
+          </view>
+          <button class="bottom" form-type="submit">发布</button>
+        </form>
+    </view>
+</view>
+<!-- 滑块代码-->
+<view class="drawer_screen" bindtap="rangetap" data-status="close" wx:if="{{showModalStatus}}"></view> 
+<view class="slide"  style="height:{{height}}px;font-size:14px;" wx:if="{{showModalStatus}}">
+    <view class="contact-unit" wx:for="{{contactList}}" wx:key="{{index}}" wx:for-index="gindex" wx:for-item="item">
+      <view class="contact-class {{item.open?'active':''}}">
+            <view style="width:90rpx;padding-left:20rpx;" wx:if="{{tid == 1}}">
+                <checkbox-group bindchange="gradeCBChange" data-id="{{item.id}}" data-gindex="{{gindex}}">
+                  <label class="checkbox">
+                    <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+                  </label>
+                </checkbox-group>
+            </view>
+            <view class="name-txt" style="width:430rpx;{{tid == 1?'':'padding-left:20rpx;'}}" bindtap="gradeTap" data-index="{{gindex}}">
+                <text>{{item.name}}({{item.countGrade}}人)</text>
+            </view>
+            <view style="width:{{tid == 1?110:200}}rpx;" bindtap="gradeTap" data-index="{{gindex}}" wx:if="{{tid == 2 || tid == 3}}">
+                <image src="{{item.open?'/images/contact/open.png':'/images/message/icon_arrow.png'}}" class="{{item.open?'open':'close'}}" mode="widthFix"></image>
+            </view>
+      </view>
+      <view wx:for="{{item.listClass}}" wx:key="{{index}}" wx:for-item="class" class="{{item.open?'show':'hide'}}" wx:if="{{tid == 2 || tid == 3}}">
+        <view class="class-unit {{class.open?'active':''}}">
+            <view style="width:90rpx;" wx:if="{{tid == 2}}">
+              <checkbox-group bindchange="classCBChange" data-id="{{class.id}}" data-gindex="{{gindex}}" data-cindex="{{index}}">
+                <label class="checkbox">
+                  <checkbox value="{{class.id}}" checked="{{class.checked}}"/>
+                </label>
+              </checkbox-group>
+            </view>
+            <view class="name-txt" style="width:340rpx;" bindtap="classTap" data-gindex="{{gindex}}" data-cindex="{{index}}">
+                <text>{{class.name}}({{class.countClass}}人)</text>
+            </view>
+            <view style="width:{{tid == 2?160:250}}rpx;" bindtap="classTap" data-gindex="{{gindex}}" data-cindex="{{index}}" wx:if="{{tid == 3}}">
+                <image src="{{class.open?'/images/contact/open.png':'/images/message/icon_arrow.png'}}" class="{{class.open?'open':'close'}}" mode="widthFix"></image>
+            </view>
+        </view>
+        <view class="contact-user {{class.open?'show':'hide'}}" style="margin-left: 80rpx;" wx:if="{{tid == 3}}">
+              <view class="user-unit" wx:for="{{class.listInfo}}" wx:key="id" wx:for-item="user" wx:for-index="uindex">
+                  <block wx:if="{{tid == 3}}">
+                      <view style="width:90rpx;text-align:center;">
+                        <checkbox-group bindchange="userCBChange" data-user="{{user}}" data-gindex="{{gindex}}" data-cindex="{{index}}" data-uindex="{{uindex}}">
+                          <label class="checkbox">
+                            <checkbox value="{{item.id}}" checked="{{user.checked}}" />
+                          </label>
+                        </checkbox-group>
+                      </view>
+                      <view style="width:{{user.roleId == 'D'?460:300}}rpx;">
+                          <image src="{{!user.avatarUrl ? '/images/contact/none.png' : user.avatarUrl}}" class="user-icon" mode="widthFix"></image>
+                          <text class="user-name">{{user.name}}</text>
+                          <text wx:if="{{user.roleId == 'D'}}" style="position:relative;top:-15px;">的{{user.relation}}</text>
+                      </view>
+                      <view style="width:180rpx;" wx:if="{{user.roleId != 'D'}}">
+                          <text class="role-name">{{user.roleName}}</text>
+                      </view>
+                  </block>
+                  <block wx:if="{{tid != 3}}">
+                      <view style="width:{{user.roleId == 'D'?570:350}}rpx;">
+                          <image src="{{!user.avatarUrl ? '/images/contact/none.png' : user.avatarUrl}}" class="user-icon" mode="widthFix"></image>
+                          <text class="user-name">{{user.name}}</text>
+                          <text wx:if="{{user.roleId == 'D'}}" style="position:relative;top:-15px;">的{{user.relation}}</text>
+                      </view>
+                      <view style="width:220rpx;" wx:if="{{user.roleId != 'D'}}">
+                          <text class="role-name">{{user.roleName}}</text>
+                      </view>
+                  </block>
+                  
+              </view>
+        </view>
+      </view>
+  </view>
+</view>

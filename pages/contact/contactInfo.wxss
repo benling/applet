@@ -1,0 +1,51 @@
+.userinfo {
+  width: 650rpx;
+  margin: 30rpx 50rpx;
+  text-align: center;
+  position: absolute;
+  top:0;
+  left: 0;
+}
+.userinfo .logo {
+  width:650rpx;
+  position: relative;
+}
+.userinfo .username {
+  width:650rpx;
+  color: #fff;
+  font-size: 14px;
+  margin-top:5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+}
+.userinfo .basic {
+  width:650rpx;
+  color: #fff;
+  font-size: 14px;
+  margin-top:5px;
+}
+
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -1px 1px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.body {
+  width:100%;
+  background-color: #FFFFFF;
+  margin-top: 20px;
+}
+.call {
+  color: #589EF9;
+  border-bottom: 1px #589EF9 solid;
+  margin-left:20px;
+}

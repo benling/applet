@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;position: relative;">
+  <view style="width:750rpx;position: relative;">
+    <image src="http://ohg2r16nq.bkt.clouddn.com/image/res/header-1.png" style="width:750rpx;margin-top:-3px;" mode="widthFix"/>
+  </view>
+  <view class="center" style="position: relative;padding-bottom:50px;">
+      <view class="unit" style="position: absolute;top:-80px;left:0;">
+          <view class="box" bindtap="appTap" data-id="2" data-url="../classShow/homework">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/classShow/zuoye.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">班级作业</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="3" data-url="../classShow/attendance">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/classShow/kaoqin.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">考勤记录</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" style="border-bottom:none;" bindtap="appTap" data-id="4" data-url="../classShow/classStyle">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/classShow/dongtai.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">班级动态</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

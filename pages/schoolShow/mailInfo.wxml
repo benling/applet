@@ -1,0 +1,38 @@
+<view class="container" style="background-color:#fff;" wx:if="{{isShow}}">
+  <view class="header"> 
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/schoolInfo">学校介绍</view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/teacherShow">教师风采</view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/honorShow">荣誉墙</view>
+      <view class="menu active" bindtap="menutap" data-url="../schoolShow/mail">校长信箱<view></view></view>
+  </view>
+  <view class="center">
+      <view class="unit"  bindtap="unittap">
+          <view class="top">
+              <view class="top-1">
+                  <image src="{{item.isHide == 1?'/images/common/niming.png':item.avatarUrl}}" style="border-radius: 50%;width:42px;height:42px;" mode="widthFix"></image>
+              </view>
+              <view class="top-2">
+                  <view>{{item.isHide == 1?"匿名":(item.username+'的'+item.relation)}}<text class="CE" wx:if="{{item.isHide == 2}}">{{item.roleName}}</text><text wx:if="{{item.isHide == 2}}"> {{item.className}}</text></view>
+                  <view>{{item.createTime}}</view>
+              </view>
+          </view>
+          <view class="content">{{item.content}}</view>
+          <view class="footer">
+              <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" class="cell" bindtap="viewImgTap" data-index="{{index}}">
+                  <image src="{{img}}" style="width:210rpx;height:210rpx;"></image>
+              </view>
+          </view>
+          <block wx:if="{{item.status==2}}"> 
+            <view class="content">回复：{{item.replyContent}}</view>
+          </block>
+          <block wx:if="{{item.status==1 && choseInfo.roleId=='A'}}">
+            <view class="area-panel">
+              <textarea bindblur="textAreaBlur"  style="width:100%;height:100px;"  placeholder="请输入回复内容" maxlength="256" />
+            </view>
+          </block>
+      </view>
+  </view>
+  <view class="bottom" wx:if="{{item.status==1 && choseInfo.roleId=='A'}}">
+     <button type="primary" size="mini" class="wanchengInfo" bindtap="replytap" disabled="{{disabled}}">回复评论</button>
+  </view>
+</view>

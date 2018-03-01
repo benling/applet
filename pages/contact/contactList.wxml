@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container" style="padding-top:0px;">
+   <!--<view class="header">
+        <input class="input"  type="text" placeholder="搜索" placeholder-class="placeholder" style="width:94%;"/>
+  </view>-->
+  <view style="width:100%;height:10px;background-color:#fff;"></view>
+  <view wx:if="{{role != 'D'}}" class="margin"></view>
+  <view class="contact-unit" wx:for="{{contactList}}" wx:key="{{index}}" wx:for-index="gindex" wx:for-item="item">
+      <view wx:if="{{role != 'D'}}" class="contact-class {{item.open?'active':''}}" bindtap="gradeTap" data-index="{{gindex}}">
+          <text  class="title">{{item.name}}</text>
+          <image src="{{item.open?'/images/contact/open.png':'/images/message/icon_arrow.png'}}" class="{{item.open?'open':'close'}}" mode="widthFix"></image>
+      </view>
+      <view wx:for="{{item.listClass}}" wx:key="{{index}}" wx:for-item="class" class="{{item.open?'show':'hide'}}">
+        <view wx:if="{{role != 'D'}}" class="class-unit {{class.open?'active':''}}" bindtap="classTap" data-gindex="{{gindex}}" data-cindex="{{index}}">
+            <text  class="title">{{class.name}}</text>
+            <image src="{{class.open?'/images/contact/open.png':'/images/message/icon_arrow.png'}}" class="{{class.open?'open':'close'}}" mode="widthFix"></image>
+        </view>
+        <view class="contact-user {{class.open?'show':'hide'}}" style="{{role!='D'?'margin-left: 50rpx;':''}}">
+              <view class="user-unit" wx:for="{{class.listInfo}}" wx:key="id" wx:for-item="user" data-user="{{user}}" bindtap="userTap">
+                  <image src="{{!user.avatarUrl ? '/images/contact/none.png' : user.avatarUrl}}" class="user-icon" mode="widthFix" style="{{role!='D'?'margin-left:20px;':'margin-left:10px;'}}"></image>
+                  <text class="user-name">{{user.name}}</text>
+                  <text class="role-name" wx:if="{{user.roleId != 'D'}}">{{user.roleName}}</text>
+                  <text style="margin-left:5px;" wx:if="{{user.roleId == 'D'}}">的{{user.relation}}</text>
+              </view>
+        </view>
+      </view>
+  </view>
+</view>

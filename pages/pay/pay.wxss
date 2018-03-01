@@ -1,0 +1,32 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -1px 1px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.title {
+  width:650rpx;
+  margin: 0 20rpx;
+  padding:30rpx 0;
+  border-bottom:1px #ddd solid;
+}
+.money {
+  width:650rpx;
+  margin: 0 20rpx;
+  padding:40rpx 0;
+  border-bottom:1px #ddd solid;
+  text-align:center;
+  font-size: 18px;
+}
+.pay-botton {
+  width:250rpx;
+  margin:0 250rpx;
+  margin-top:20px;
+}

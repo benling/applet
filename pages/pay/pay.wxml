@@ -1,0 +1,63 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+  <view style="width:750rpx;">
+    <image src="http://ohg2r16nq.bkt.clouddn.com/image/banner/pay_banner1.png" style="width:750rpx;margin-top:-3px;" mode="widthFix"/>
+  </view>
+  <loading hidden="{{hiddenLoading}}">正在发送支付请求</loading>
+  <view class="center">
+      <view class="unit">
+          <view class="money">
+              {{fee}}元<text style="font-size:12px;"> 年费</text>
+          </view>
+          <view style="width:650rpx;margin: 0 20rpx;padding:20rpx 0;">
+            <checkbox-group bindchange="checkboxChange">
+              <label class="checkbox">
+                <checkbox value="1" checked="{{checked}}"/> 勾选即代表阅读并同意 《<text style="color:#589EF9;" catchtap="protocoltap">免责协议</text>》
+              </label>
+            </checkbox-group>
+          </view>
+          <view style="width:650rpx;margin: 0 20rpx;padding-bottom:20px;">
+              <scroll-view scroll-y style="height: 160px;">
+                <view class="scroll-view-item" style="color:black;font-weight:bold;">
+                请您务必审慎阅读、充分理解各条款内容，如您勾选同意即代表接受优视微校园平台服务内容。
+                </view>
+                <view class="scroll-view-item" style="margin-top:10px;">
+                开通年服务费用包括一下内容:
+                </view>
+                <view class="scroll-view-item"  style="margin-top:10px;">
+                  <view>1、学生安全</view>
+                  <view style="width:620rpx;margin-left:30rpx;margin-top:5px;">
+                  此功能开通后，您可以享受实时定位、区域电子围栏预警、活动轨迹查询、SOS紧急求助等功能全方位呵护您孩子的安全；
+                  同时可与当地政府校园安全监控防护体系互联互通，形成学校、家庭、社会齐抓共管的360度安全防护，有效的防范和杜绝校园暴力、拐卖儿童等突发事件。
+                  </view>
+                </view>
+                <view class="scroll-view-item" style="margin-top:10px;">
+                  <view>2、学生考勤</view>
+                  <view style="width:620rpx;margin-left:30rpx;margin-top:5px;">
+                  此功能开通后，在学生进出入学校时，家长可以收到微校园系统消息。家长可以随时有效的了解学生是否安全进入校园。能提供全面的学生作息时间分析参考，
+                  您可以更好的安排孩子学习时间。劳逸结合，轻松学习快乐成长。
+                  </view>
+                </view>
+                <view class="scroll-view-item" style="margin-top:10px;">
+                  <view>3、学生安全定位手表</view>
+                  <view style="width:620rpx;margin-left:30rpx;margin-top:5px;">
+                  上述功能开通后，您可以免费获赠一块价值598元的高端学生安全定位手表。该手表采用1.22高清触摸屏，集北斗定位、GPS定位、LBS定位为一体提供三重精准定位。
+                  另外该手表还具有绿色亲情通话、允许来电、定时休免等功能，方便您与孩子实时联系的同时保障孩子通话安全免除外界打扰，结合微校园平台的学校统一休眠管理，
+                  避免影响孩子课堂学习。
+                  </view>
+                </view>
+                <view class="scroll-view-item" style="margin-top:10px;">
+                  <view>4、手表全年基本通讯费</view>
+                  <view style="width:620rpx;margin-left:30rpx;margin-top:5px;">
+                  随手表附赠一张SIM卡，完成实名认证后即可激活此SIM卡，卡内含有每月100分钟的国内通话和25MB国内流量，共计12个月，全年套餐内免费使用，
+                  套餐外超出部分需您自行承担。
+                  </view>
+                </view>
+              </scroll-view>
+          </view>
+      </view>
+      <view style="width:750rpx;">
+        <button type="primary" size="mini" disabled="{{disabled}}"  bindtap="savetap" class="pay-botton" style="line-height: 2.8">缴费</button>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+
+.title {
+  width:690rpx;
+  font-weight: bold;
+  padding:30rpx;
+  background-color: #fff;
+  text-align: center;
+}
+.msg {
+  width:690rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.com-icon {
+  width:44rpx;
+  height:44rpx;
+  margin-bottom:-2px;
+  margin:0 10px;
+}
+.slide {
+  position:fixed;
+  bottom:0;
+  left:0;
+  transition: all 1s ease-in;
+  background-color:#fff;
+  z-index:1001;
+  width:750rpx;
+  height:220px;
+}
+.row{
+  width:750rpx;
+  background-color:#fff;
+  display: flex;
+  flex-direction: column;
+  color:#989898;
+  border-bottom: 1px #ddd solid;
+}
+.row .top{
+	width:710rpx;
+  padding:20rpx;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: row;
+}
+.row .top .top-1{
+	width:710rpx;
+  position: relative;
+}
+.row .top .user-info{
+	position: absolute;
+  top: 0;
+  left:50px;
+}
+.row .content{
+	width:690rpx;
+  padding:10rpx 30rpx;
+}

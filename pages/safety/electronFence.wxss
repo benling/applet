@@ -1,0 +1,31 @@
+.unit {
+  background-color:#fff;
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 1px;
+  position: relative;
+  font-size: 14px;
+}
+.row {
+  display: flex;
+  flex-direction:row;
+  
+}
+.cell-1 {
+	width:80rpx;
+}
+.cell-1 image{
+	width:42rpx;
+	height: 42rpx;
+  position: relative;
+  top:10rpx;
+  margin-left: 20rpx;
+}
+.cell-2 {
+	width:400rpx;
+}
+.cell-3 {
+	width:270rpx;
+  text-align: center
+}

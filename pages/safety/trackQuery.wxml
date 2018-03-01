@@ -1,0 +1,44 @@
+<view class="container" style="height:{{height}}px;">
+  <view class="header">
+      <view class="row">
+          <view class="cell-1">
+              <picker mode="date" value="{{sdate}}" start="{{sdstart}}" end="{{sdend}}"  bindchange="startDateChange">
+                <view class="picker">
+                  <view class="date-unit">{{sdate}}</view>
+                </view>
+              </picker>
+          </view>
+          <view class="cell-2">
+              <picker mode="time" value="{{stime}}" start="00:00" end="23:59" bindchange="startTimeChange">
+                <view class="picker">
+                  <view class="time-unit">{{stime}}</view>
+                </view>
+              </picker>
+          </view>
+          <view class="cell-3">
+              <button type="primary" size="mini"   disabled="{{disabled}}" bindtap="query">轨迹查询 </button>
+          </view>
+      </view>
+      <view class="row">
+          <view class="cell-1">
+              <picker mode="date" value="{{edate}}" start="{{edstart}}" end="{{edend}}"  bindchange="endDateChange">
+                <view class="picker">
+                  <view class="date-unit">{{edate}}</view>
+                </view>
+              </picker>
+          </view>
+          <view class="cell-2">
+              <picker mode="time" value="{{etime}}" start="00:00" end="23:59" bindchange="endTimeChange">
+                <view class="picker">
+                  <view class="time-unit">{{etime}}</view>
+                </view>
+              </picker>
+          </view>
+          <view class="cell-3">
+              <button type="primary" size="mini" disabled="{{pdisabled}}"  bindtap="play">播放</button>
+          </view>
+      </view>
+  </view>
+  <map wx:if="{{hasMap}}" id="map" longitude="{{lng}}" latitude="{{lat}}" polyline="{{polyline}}" markers="{{markers}}" circles="{{circles}}" scale="12"
+  style="width: 100%; height: {{height-90}}px;"></map>
+</view>

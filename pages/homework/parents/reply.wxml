@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="center">
+        <form bindsubmit="formSubmit">
+          <view class="unit">
+            <loading hidden="{{hiddenLoading}}">{{loadingText}}</loading>
+            <view style="width:630rpx;padding:30rpx;border-bottom:1px #ddd solid;">
+                <textarea bindblur="textBlur" class="textarea"  placeholder="回复内容..." maxlength="2048" />
+            </view>
+            <view style="width:630rpx;padding:30rpx;" wx:if="{{replyType == 2}}">
+                <view class="img-cell" wx:for="{{filePaths}}" wx:key="{{index}}">
+                  <image class="img" src="{{item}}"></image>
+                  <image src="/images/support/delete.png" bindtap="deltap" data-index="{{index}}" class="deleteImg" mode="widthFix"></image>
+                </view>
+                <view bindtap="choseImg">
+                  <image src="/images/classShow/choose.png"  style="width:170rpx;height:170rpx;"></image>
+                </view>
+            </view>
+            <view style="width:630rpx;padding:30rpx;padding-bottom:0;display: flex;flex-direction: row;" wx:if="{{replyType == 3}}">
+                <view style="margin-top:5px;">语音：</view>
+                <view><button size="mini" bindtouchstart="recordingStart" bindtouchend="recordingEnd" style="width:100px;">{{btnTxt}}</button></view>
+            </view>
+            <view style="width:630rpx;padding:30rpx;padding-bottom:5px;" wx:if="{{replyType == 3}}">
+                <view class="voice-unit" wx:for="{{voiceList}}" wx:key="{{index}}">
+                  <block wx:if="{{item.status == 1}}">
+                    <image src="/images/homework/yuyin.png" class="yuyin" bindtap="playtap" data-status="1" data-index="{{index}}" data-url="{{item.filePath}}"></image>
+                  </block>
+                  <block wx:if="{{item.status == 2}}">
+                    <image src="/images/homework/play.gif" class="yuyin" bindtap="playtap" data-status="2" data-index="{{index}}"></image>
+                  </block>
+                  <image src="/images/support/delete.png" class="del-img" bindtap="delVoiceTap" data-index="{{index}}"></image>
+                </view>
+            </view>
+            <view style="width:660rpx;">
+              <button form-type="submit" type="primary" class="primary-btn"  style="width:340rpx;margin: 40px 160rpx;">回复</button>
+            </view>
+          </view>
+        </form>
+    </view>
+</view>

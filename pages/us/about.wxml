@@ -1,0 +1,15 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+      <view class="menu active" bindtap="menutap" data-url="../us/about">关于U Campus<view></view></view>
+      <view class="menu" bindtap="menutap" data-url="../us/company">关于公司</view>
+    </view>
+    <view class="center">
+      <image src="/images/us/1.png" style="width:320rpx;margin:150rpx 215rpx;" mode="widthFix"></image>
+      <view class="unit">
+          <view style="margin:30px 10px;">产品归属：深圳市优视技术有限公司</view>
+          <view style="margin:30px 10px;">联系方式：400-011-3819</view>
+          <view style="margin:30px 10px;">当前版本：v1.0.9</view>
+      </view>
+    </view>
+</view>

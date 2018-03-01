@@ -1,0 +1,48 @@
+/**application.wxss**/
+.header {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+.header .logo {
+  width:120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  position:absolute;
+  bottom:-40px;
+  left:50%;
+  margin-left: -60px;
+  z-index:999;
+}
+.header .logo image{
+  width:60px;
+  margin-top: 40px;
+  margin-left: 30px;
+}
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.validate {
+  width:40%;
+  padding:7px 5px;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+}
+.validate-btn {
+  width:50%;
+  position:absolute;
+  top:0;
+  right:0;
+  font-size:14px;
+}

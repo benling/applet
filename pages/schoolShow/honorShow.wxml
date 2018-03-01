@@ -1,0 +1,20 @@
+<view class="container" style="background-color:#fff;">
+  <view class="header">
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/schoolInfo">学校介绍</view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/teacherShow">教师风采</view>
+      <view class="menu active" bindtap="menutap" data-url="../schoolShow/honorShow">荣誉墙<view></view></view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/mail">校长信箱</view>
+  </view>
+  <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+ <view class="unit-view" wx:for="{{list}}" wx:key="{{index}}" bindtap="infotap" data-id="{{item.id}}">
+      <view class="img"><image src="{{item.img}}" style="width:96%;height:70px;"></image></view>
+      <view class="content">
+          <view class="title">{{item.title}}</view>
+          <view class="text">{{item.summary}}</view>
+          <view class="time">
+            <view style="width:245rpx;"><image src="{{item.icon}}" catchtap="liketap" data-id="{{item.id}}" data-like="{{item.isLike}}" data-index="{{index}}"  style="width:42rpx;height:42rpx;margin-bottom:-3px;"></image>{{item.likeCount}}</view>
+            <view style="width:245rpx;text-align:right;">{{item.createTime}}</view>
+          </view>
+      </view>
+  </view>
+</view>

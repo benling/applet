@@ -1,0 +1,125 @@
+/**app.wxss**/
+.container {
+  width:100%;
+  height: 100%;
+  background-color: #F0F0F2;
+  font-size: 14px;
+} 
+.input{
+  border:1px #ddd solid;
+  margin: 5px;
+  padding:4px;
+  border-radius: 5px;
+  width:160px;
+}
+button[type="primary"] {
+  color:#FFFFFF;
+  background-color:#f08537;
+  line-height: 2.2;
+}
+/*button[type="primary"]:hover {
+  color:#FFFFFF;
+  background-color:#f7a633;
+}*/
+button[disabled] {
+  background-color: #ccc;
+}
+button[disabled][type="primary"] {
+  background-color: #ccc;
+}
+.role-name {
+  border-radius:10px;
+  font-size:12px;
+  background-color:#F4C509;
+  color:#fff;
+  padding:0 8px;
+  margin-left:5px;
+  margin-top:-5px;
+  display:inline-block;
+  height:18px;
+  line-height:18px;
+  vertical-align:middle;
+}
+.inner{
+  position: absolute;
+  top:0;
+}
+.inner.del{
+  background-color:#e64340;
+  width:180rpx;
+  text-align:center;
+  z-index:4;
+  right:0;
+  color:#fff;
+}
+.inner.mod{
+  background-color:#48C23D;
+  width:180rpx;
+  text-align:center;
+  z-index:4;
+  right:0;
+  color:#fff;
+}
+
+.inner.txt{
+  background-color: #fff;
+  width: 100%;
+  z-index: 5;
+  transition: left 0.2s ease-in-out;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.add {
+  background-color: #fff;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-top: 30rpx;
+}
+.add image{
+  width:56rpx;
+  height:56rpx;
+	vertical-align: middle;
+	margin-left:25rpx;
+  margin-top:-5rpx;
+}
+.no-data {
+  width:750rpx;
+  text-align: center;
+  margin-top: 40%;
+  color:#989898;
+  background-color: #fff;
+}
+.CE{
+	display: inline-block;
+	width: auto;
+	border: 1px solid #14d212;
+	color: #14d212;
+	text-align:center;
+  font-size: 13px !important;
+	margin-left: 5px;
+  padding:3rpx 10rpx;
+  margin-bottom:5rpx;
+}
+view {
+  color: #4E4E4E;
+}
+/*屏幕遮罩层*/
+.drawer_screen {  
+  width: 100%;  
+  height: 100%;  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  z-index: 1000;  
+  background: #000;  
+  opacity: 0.5;  
+  overflow: hidden;  
+}
+.addImg {
+  width:70px;
+  height:65px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

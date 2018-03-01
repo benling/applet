@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;padding-bottom:60px;">
+  <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <block wx:if="{{list.length > 0}}">
+    <view class="center" wx:for="{{list}}" wx:key="{{index}}" style="margin-top:20px;" bindtap="homeworktap" data-id="{{item.id}}">
+        <view style="width:750rpx;text-align:center;">
+            <text style="background-color:#E1E1E1;padding:5px 10px;color:#fff;">{{item.createTime}}</text>
+        </view>
+        <view class="unit" style="position:relative;">
+            <view class="header">
+              <view style="width:330rpx;">{{item.subjectName}}作业</view>
+              <block wx:if="{{item.undoneCount == 0}}">
+                  <image src="/images/homework/complete.png" style="width:40px;height:40px;position:absolute;top:-5px;right:-5px;"></image>
+              </block>
+              <block wx:if="{{item.undoneCount != 0}}">
+                  <image src="/images/homework/notcomplete.png" style="width:40px;height:40px;position:absolute;top:-5px;right:-5px;"></image>
+              </block>
+            </view>
+            <view class="top" wx:if="{{item.imgs.length > 0}}">
+                <image src="{{item.imgs[0]}}" style="width:630rpx;height:150px;"></image>
+            </view>
+            <view class="content">
+              <view>{{item.content}}</view>
+            </view>
+            <view class="footer">
+                <view style="width:370rpx;">
+                  <text>共{{item.count}}份作业</text>
+                  <text wx:if="{{item.notMarkCount > 0}}" style="color:#ff0000;margin-left:5px;">{{item.notMarkCount}}份未批</text>
+                </view>
+                <view style="width:260rpx;text-align:right;">
+                  {{item.className}}
+                  <image src="/images/classShow/del.png" catchtap="deltap" class="del-img" data-id="{{item.id}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+  </block>
+  <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+</view>

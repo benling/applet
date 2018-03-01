@@ -1,0 +1,137 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;position: relative;">
+  <view style="width:750rpx;position: relative;">
+    <image src="/images/my/header.png" style="width:750rpx;margin-top:-3px;" mode="widthFix"/>
+    <view class="userinfo">
+        <view class="logo">
+             
+              <block wx:if="{{choseInfo.logoUrl}}">
+                  <image src="{{choseInfo.logoUrl}}" style="width:160rpx;" mode="widthFix"/>
+              </block>
+              <block wx:if="{{!choseInfo.logoUrl}}">
+                  <image src="/images/contact/none.png" style="width:160rpx;" mode="widthFix"/>
+              </block>
+              <block wx:if="{{choseInfo.roleId == 'D'}}">
+                <image src="{{validDate?'/images/my/pay.png':'/images/my/notpay.png'}}" class="vip" bindtap="viptap" mode="widthFix"/>
+                <view class="validtime" wx:if="{{validShow}}">有效期:{{validDate}}</view>
+              </block>
+              <view class="arrow" wx:if="{{validShow}}"></view>
+              <view class="role" bindtap="roletap" data-status="open">{{choseInfo.roleName}}</view>
+              <view class="jiantou"></view>
+        </view>
+        <view class="schoolname" bindtap="tologin" wx:if="{{choseInfo.roleId == 'N'}}">登录/注册</view>
+        <view class="schoolname" wx:if="{{choseInfo.schoolName}}">{{choseInfo.schoolName}}</view>
+        <view class="stuno" wx:if="{{choseInfo.studentNo}}">学号:{{choseInfo.studentNo}}</view>
+        <view class="basic">
+          <text class="username" wx:if="{{choseInfo.name}}">{{choseInfo.name}}</text>
+          <block wx:if="{{choseInfo.sex == 1}}">
+              <image src="/images/my/gg.png" style="width:30rpx;margin:0 10px;" mode="widthFix"/>
+          </block>
+          <block wx:if="{{choseInfo.sex == 2}}">
+              <image src="/images/my/mm.png" style="width:30rpx;margin:0 10px;" mode="widthFix"/>
+          </block>
+          <text class="userclass" wx:if="{{choseInfo.className}}">{{choseInfo.className}}</text>
+        </view>
+    </view>
+  </view>
+  <view class="center" style="position: relative;padding-bottom:50px;">
+      <view class="unit" style="position: absolute;top:-60px;left:0;">
+          <view class="box" bindtap="appTap" data-id="1" data-url="../my/info">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/my/xxxx.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">学校信息</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" style="border-bottom:none;" bindtap="appTap" data-id="2" data-url="../my/account">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/my/account.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">账户</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+      </view>
+      <view class="unit" style="position: absolute;top:60px;left:0;">
+          <view class="box" bindtap="appTap" data-id="3" data-url="../support/support">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/my/fwzc.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">服务支持</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="4" data-url="../setting/index">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/my/sz.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">设置</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" style="border-bottom:none;" bindtap="appTap" data-id="5" data-url="../us/about">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/my/gywm.png" style="width:40px;height:40px;margin-top:8px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">关于我们</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+      </view>
+  </view>
+  <!-- 滑块代码-->
+  <view class="drawer_screen" bindtap="roletap" data-status="close" wx:if="{{showModalStatus}}"></view> 
+  <view class="slide"  style="height:{{height}}px;" wx:if="{{showModalStatus}}">
+      <view class="header" bindtap="addSchool">
+            <view class="header-left">
+              <image src="/images/school/add.png" style="width:35px;" mode="widthFix"></image>
+            </view>
+            <view class="header-center">
+              添加
+            </view>
+      </view>
+      <view wx:for="{{listChoseInfo}}" wx:key="id" wx:for-item="item" class="school-unit" data-info="{{item}}" bindtap="choseInfoTap">
+          <view class="left">
+            <image src="{{item.logoUrl}}" style="width:50px;" mode="widthFix"></image> 
+          </view>
+          <view wx:if="{{item.roleId == 'D'}}" class="center">
+              <view class="school-name">{{item.schoolName}}</view>
+              <view>
+                <text>姓名:{{item.name}}</text>
+              </view>
+              <view>
+                <text>学号:{{item.studentNo}}</text>
+                <text style="margin-left:5px;">班级:{{item.className}}</text>
+              </view>
+          </view>
+          <view wx:if="{{item.roleId != 'D'}}" class="center">
+              <view class="school-name">{{item.schoolName}}</view>
+              <view style="margin-top:10px;">
+                <text>姓名：{{item.name}}</text>
+                <text style="margin-left:10px;">职位：{{item.roleName}}</text>
+              </view>
+          </view>
+          <view class="right" wx:if="{{item.selected}}">
+            <image src="/images/school/selected.png" style="width:15px;margin-top:25px;" mode="widthFix"></image>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../index/main">
+            <image src="/images/index/shouye.png" style="width:24px;" mode="widthFix"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" style="position:relative;" data-url="../message/list">
+            <image src="/images/index/message.png" style="width:24px;" mode="widthFix"></image>
+            <text wx:if="{{messageCount > 0}}" class="new">{{messageCount>99?('99+'):messageCount}}</text>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../my/index">
+            <image src="/images/index/my-active.png" style="width:24px;" mode="widthFix"></image>
+      </view>
+  </view>
+</view>

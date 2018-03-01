@@ -1,0 +1,139 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:700rpx;
+  margin:25rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -1px 1px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.center .unit .header {
+  width: 700rpx;
+  height: 80px;
+}
+.center .unit .header .box{
+  width: 100rpx;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+}
+.center .unit .header .box .week,
+.center .unit .header .box .day{
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin:0 auto;
+}
+.center .unit .header .box .today{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border:1px #f99b58 solid;
+  color: #f99b58;
+  line-height: 35px;
+}
+.center .unit .header .box .active{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #f99b58;
+  color: #fff;
+  line-height: 35px;
+}
+.center .unit .title{
+  width: 670rpx;
+  height: 30px;
+  line-height: 30px;
+  background-color: #F7F7F7;
+  padding-left: 30rpx;
+  margin-top:10px;
+}
+.center .unit .kc{
+  width: 630rpx;
+  height: 35px;
+  line-height: 35px;
+  margin-left: 30rpx;
+  margin-top:10px;
+  padding-left: 10rpx;
+  border-radius: 5px;
+  position: relative;
+  overflow-X:scroll;
+  white-space:nowrap;
+}
+.center .unit .kc .tip{
+  position: absolute;
+  left: 50rpx;
+  width: 520rpx;
+  height: 120px;
+  border-radius: 5px;
+  z-index: 100;
+  padding-left: 20rpx;
+  font-size: 12px;
+  line-height: 20px;
+}
+/* 向上的箭头 */  
+.dot-top {  
+  position: absolute;
+  left: 260rpx;
+  top:35px;
+  border-right: 15px solid transparent;  
+  border-left: 15px solid transparent;  
+  content: "";  
+} 
+/* 向下的箭头 */  
+.dot-bottom {  
+  position: absolute;
+  left: 260rpx;
+  top:-15px;
+  border-right: 15px solid transparent;  
+  border-left: 15px solid transparent;  
+  content: "";  
+}
+.addImg {
+  width:65px;
+  height:55px;
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+}   
+.bottom {
+  width:750rpx;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:50px;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+  display:flex;
+  flex-direction: row;
+}
+.bottom .menu {
+  width:375rpx;
+  text-align:center;
+  margin-top:5px;
+}
+.deleteImg{
+  width:20px;
+  height: 20px;
+  position: absolute;
+  top:7px;
+  right: -25px;
+}
+.updateImg{
+  width:40px;
+  height: 25px;
+  position: absolute;
+  top:0;
+  right: 0;
+}
+.area {
+  width:90%;
+  height:100px;
+  border:1px #ddd solid;
+  padding: 20rpx;
+  margin:auto;
+}

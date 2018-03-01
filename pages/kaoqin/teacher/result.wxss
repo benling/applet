@@ -1,0 +1,28 @@
+.unit {
+  background-color:#fff;
+	width:750rpx;
+	height:40px;
+  line-height: 40px;
+  border-bottom:1px #ddd solid;
+  display: flex;
+  flex-direction: row;
+}
+.unit .img {
+  width:25px;
+	height: 25px;
+	margin:0 30rpx;
+  position: relative;
+  top:7px;
+}
+
+.cell-1 {
+  width:120rpx;
+}
+.cell-2 {
+  width:230rpx;
+}
+.cell-3 {
+  width:380rpx;
+  text-align: right;
+  padding-right:20rpx;
+}

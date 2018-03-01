@@ -1,0 +1,25 @@
+.news-view {
+  width:100%;
+  background-color:#FFFFFF;
+  border-bottom:1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+}
+.news-view .content {
+  float:left;
+  padding:2% 2%;
+  width:72%;
+}
+.news-view .content .text {
+  font-size:14px;
+  margin-top:15px;
+  color:#989898;
+}
+.news-view .img {
+  float:left;
+  padding:2%;
+  width:20%;
+}
+.title{
+  font-weight: bold;
+}

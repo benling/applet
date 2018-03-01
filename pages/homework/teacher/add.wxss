@@ -1,0 +1,75 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.chose-class {
+  width:630rpx;
+  height: 24px;
+  line-height: 24px;
+  margin:30rpx;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  border-top:1px #ddd solid;
+  border-bottom:1px #ddd solid;
+}
+.img-cell{
+  width: 210rpx;
+  display: inline-block;
+  position: relative;
+}
+.img-cell .img{
+  width: 170rpx;
+  height: 170rpx;
+}
+.img-cell .deleteImg{
+  width:24px;
+  position:absolute;
+  right:30rpx;
+  top:-5px;
+}
+.area {
+  width:590rpx;
+  height:100px;
+  border:1px #ddd solid;
+  padding: 20rpx;
+}
+.bottom {
+  width: 750rpx;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  background-color: #f08537;
+}
+.commit-type {
+  width:630rpx;
+  padding:10rpx 30rpx;
+  padding-bottom:30px;
+}
+.voice-unit {
+  margin-top:5px;
+}
+.voice-unit .yuyin{
+  width: 100px;
+  height: 30px;
+}
+.del-img{
+  width:22px;
+  height:22px;
+  margin-bottom:5px;
+  margin-left:10px;
+}

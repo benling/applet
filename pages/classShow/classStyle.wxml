@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;padding-bottom:65px;">
+    <view class="header">
+      <view class="menu active" bindtap="menutap" data-url="../classShow/classStyle">班级动态<view></view></view>
+      <view class="menu" bindtap="menutap" data-url="../classShow/myStyle">我的动态</view>
+    </view>
+    <loading hidden="{{hiddenLoading}}">正在发送支付请求</loading>
+    <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+    <view class="center" wx:if="{{list.length > 0}}">
+      <view class="unit">
+            <view class="row"  bindtap="unittap" wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx" data-item="{{item}}">
+              <view class="top">
+                  <view class="top-1">
+                      <image src="{{item.avatarUrl}}" style="border-radius: 50%;width:48px;height:48px;"></image>
+                      <view class="user-info">
+                        <view>
+                          {{item.username}}{{item.roleId == 'D' ? '的'+item.relation : ''}}<text class="CE">{{item.roleName}}</text>
+                          <block wx:if="{{choseInfo.roleId != 'D'}}">
+                            <image src="/images/classShow/hide.png" catchtap="hidetap" class="hide-img" data-id="{{item.id}}"></image>
+                          </block>
+                        </view>
+                        <view>
+                          <text>{{item.className}}</text>
+                        </view>
+                      </view>
+                  </view>
+              </view>
+              <view class="content">{{item.partContent}}</view>
+              <view class="footer">
+                  <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" class="cell">
+                      <image src="{{img}}" style="width:80px;height:80px;"></image>
+                  </view>
+              </view>
+              <view class="{{item.show}}">...</view>
+              <view style="text-align:right;padding:15px;">
+               <text style="float:left;">{{item.createTime}}</text>
+                <block wx:if="{{item.roleId != 'D' && choseInfo.roleId == 'D' && item.userId != choseInfo.userId && item.status == '2'}}">
+                    <image src="/images/classShow/shang.png" class="like-icon" catchtap="shangtap" data-id="{{item.id}}" style="margin-right:20px;"></image>
+                </block>
+                <image src="{{item.likeCount>0?'/images/common/xin1.png':'/images/common/xin.png'}}" class="like-icon"></image>
+                <text style="margin-right:20px;margin-top:-3px;"> {{item.likeCount}}</text>
+                <image src="{{item.commentCount>0?'/images/common/c1.png':'/images/common/c.png'}}" class="com-icon"></image>
+                 {{item.commentCount}}
+              </view>
+          </view>
+      </view>
+    </view>
+    <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+    <modal class="modal" hidden="{{modalFlag}}" title="打赏" confirm-text="确定" cancel-text="取消" bindcancel="canceltap" bindconfirm="oktap"> 
+        <view class="dashang">
+            <view class="img" wx:for="{{iconList}}" wx:key="{{index}}" bindtap="selectImgTap" data-index="{{index}}">
+                <image src="/images/classShow/{{item.selected?item.name+'-active':item.name}}.png" style="width:50%;" mode="widthFix"></image>
+                <view>{{item.value}}朵</view>
+            </view>
+        </view>
+        <view style="width:100%;margin-top:20px;color:#ccc;font-size:12px;">
+            *注：给老师送花，老师可获取积分哦！
+        </view>
+    </modal> 
+</view>

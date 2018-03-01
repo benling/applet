@@ -1,0 +1,7 @@
+image {
+  width:100rpx;
+  margin-top: 30%;
+}
+.num {
+  color:#14D212;
+}

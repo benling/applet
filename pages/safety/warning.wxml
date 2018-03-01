@@ -1,0 +1,38 @@
+<view class="container" style="height:{{height}}px;background-color:#fff;padding-top:2rpx;">
+    <view class="row" style="border-bottom:1px #ddd solid;">
+        <view class="cell-1">
+            <picker mode="date" value="{{sdate}}" start="{{start}}" end="{{end}}"  bindchange="startDateChange">
+              <view class="picker">
+                <view class="date-unit">{{sdate}}</view>
+              </view>
+            </picker>
+        </view>
+        <view class="cell-2">
+            <picker mode="date" value="{{edate}}" start="{{start}}" end="{{end}}" bindchange="endDateChange">
+              <view class="picker">
+                <view class="date-unit">{{edate}}</view>
+              </view>
+            </picker>
+        </view>
+        <view class="cell-3">
+            <button type="primary" size="mini"   disabled="{{disabled}}" bindtap="query">查询 </button>
+        </view>
+    </view>
+    <view wx:if="{{warnings.length == 0}}" class="no-data">【暂无数据】</view>
+    <view class="warning-unit" wx:for="{{warnings}}" wx:key="{{id}}">
+        <view class="header">
+            <view class="cell-1"><image src="{{item.icon}}" mode="widthFix"></image></view>
+            <view class="cell-2">{{item.type}}</view>
+            <view class="cell-3">{{item.time}}</view>
+        </view>
+        <view class="content">{{item.desc}}</view>
+        <view class="footer">
+          <button wx:if="{{item.type == 'SOS报警' && item.alarmid}}" type="primary" size="mini" bindtap="shangbaotap" data-id="{{item.alarmid}}" style="width:80px;margin-right:20px;">求助</button>
+            <button type="primary" size="mini"  bindtap="viewmaptap" data-lat="{{item.lat}}" data-lng="{{item.lng}}">查看地图 </button>
+        </view>
+    </view>
+</view>
+<loading hidden="{{hiddenLoading}}">正在发送求助</loading>
+<modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="发送" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+       <textarea bindblur="textBlur" class="area"  placeholder="求助原因..." maxlength="128" />
+</modal>

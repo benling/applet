@@ -1,0 +1,66 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;" wx:if="{{shwoPage}}">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit" style="padding-bottom:20px;">
+          <view class="box">
+              <picker bindchange="classChange" value="{{cindex}}" range="{{classList}}" range-key="name">
+                <view class="picker">
+                  <view style="width:100%;position:relative;text-align:center;">
+                  {{classList[cindex].name}}
+                  <image src="/images/kaoqin/switch.png" style="width:28px;height:28px;position:absolute;top:15px;left:0;" mode="widthFix"/>
+                  </view>
+                </view>
+              </picker>
+          </view>
+          <view class="weeks-view" style="background-color:#FFE5D4;">
+              <view style="width:70rpx;"></view>
+              <view class="week">一</view>
+              <view class="week">二</view>
+              <view class="week">三</view>
+              <view class="week">四</view>
+              <view class="week">五</view>
+              <view class="week">六</view>
+              <view class="week">日</view>
+          </view>
+          <view style="width:650rpx;margin:20rpx;text-align:center;" wx:if="{{mors.length == 0 && afts.length == 0}}">暂无数据</view>
+          <view class="morning-view" wx:if="{{mors.length > 0}}">
+              <view  style="width:70rpx;border-right:1px #fff solid;text-align:center;position:relative;">
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-top:-16px;margin-left:-35rpx;">上</view>
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-left:-35rpx;">午</view>
+              </view>
+              <view  style="width:630rpx;">
+                  <view class="schedule-view" wx:for="{{mors}}" wx:key="{{index}}" wx:for-item="row" wx:for-index="rowIndex">
+                      <view class="sub {{item.ingOrRecently == 1?'bgred':''}} {{item.isFirstTap?'border-one':''}} {{item.isTwoTap?'border-two':''}}" bindtap="tktap" wx:for="{{row}}" wx:key="{{index}}" data-row="{{rowIndex}}" data-col="{{index}}" data-type="1">
+                        {{item.subjectName?item.subjectName:'无'}}
+                        <image wx:if="{{item.isTeaching > 0}}" src="/images/kcb/tk.png" class="tk"></image>
+                        <image wx:if="{{item.type == 2}}" src="/images/kcb/ytk.png" class="tk"></image>
+                      </view>
+                  </view>
+              </view>
+          </view>
+          <view class="afternoon-view" wx:if="{{afts.length > 0}}" style="margin-top:20px;">
+              <view style="width:70rpx;text-align:center;border-right:1px #fff solid;position:relative;">
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-top:-16px;margin-left:-35rpx;">下</view>
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-left:-35rpx;">午</view>
+              </view>
+              <view style="width:630rpx;">
+                  <view class="schedule-view" wx:for="{{afts}}" wx:key="{{index}}" wx:for-item="row" wx:for-index="rowIndex">
+                      <view class="sub {{item.ingOrRecently == 1?'bgred':''}} {{item.isFirstTap?'border-one':''}} {{item.isTwoTap?'border-two':''}}" bindtap="tktap" wx:for="{{row}}" wx:key="{{index}}" data-row="{{rowIndex}}" data-col="{{index}}" data-type="2">
+                        {{item.subjectName?item.subjectName:'无'}}
+                        <image wx:if="{{item.isTeaching > 0}}" src="/images/kcb/tk.png" class="tk"></image>
+                        <image wx:if="{{item.type == 2}}" src="/images/kcb/ytk.png" class="tk"></image>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../teacher/index">
+            <image src="/images/kcb/today.png" style="width:45px;height: 40px;"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../teacher/schedule">
+            <image src="/images/kcb/kcb-active.png" style="width:42px;height: 40px;"></image>
+      </view>
+  </view>
+</view>

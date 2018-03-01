@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;width:710rpx;padding:20px 20rpx;">
+      <view class="title">《免责协议声明》</view>
+      <view>请您务必审慎阅读、充分理解各条款内容，如您勾选同意即代表接受优视微校园平台服务内容</view>
+      <view style="margin-top:10px;">开通年服务费用包含以下内容：</view>
+      <view style="margin-top:10px;">
+          <view>1、学生安全</view>
+          <view style="width:680rpx;margin-left:30rpx;margin-top:5px;">
+          此功能开通后，您可以享受实时定位、区域电子围栏预警、活动轨迹查询、SOS紧急求助等功能全方位呵护您孩子的安全；
+          同时可与当地政府校园安全监控防护体系互联互通，形成学校、家庭、社会齐抓共管的360度安全防护，有效的防范和杜绝校园暴力、拐卖儿童等突发事件。
+          </view>
+      </view>
+      <view style="margin-top:10px;">
+          <view>2、学生考勤</view>
+          <view style="width:680rpx;margin-left:30rpx;margin-top:5px;">
+          此功能开通后，在学生进出入学校时，家长可以收到微校园系统消息。家长可以随时有效的了解学生是否安全进入校园。能提供全面的学生作息时间分析参考，
+          您可以更好的安排孩子学习时间。劳逸结合，轻松学习快乐成长。
+          </view>
+      </view>
+      <view style="margin-top:10px;">
+          <view>3、学生安全定位手表</view>
+          <view style="width:680rpx;margin-left:30rpx;margin-top:5px;">
+          上述功能开通后，您可以免费获赠一块价值598元的高端学生安全定位手表。该手表采用1.22高清触摸屏，集北斗定位、GPS定位、LBS定位为一体提供三重精准定位。
+          另外该手表还具有绿色亲情通话、允许来电、定时休免等功能，方便您与孩子实时联系的同时保障孩子通话安全免除外界打扰，结合微校园平台的学校统一休眠管理，
+          避免影响孩子课堂学习。
+          </view>
+      </view>
+      <view style="margin-top:10px;">
+          <view>4、手表全年基本通讯费</view>
+          <view style="width:680rpx;margin-left:30rpx;margin-top:5px;">
+          随手表附赠一张SIM卡，完成实名认证后即可激活此SIM卡，卡内含有每月100分钟的国内通话和25MB国内流量，共计12个月，全年套餐内免费使用，
+          套餐外超出部分需您自行承担。
+          </view>
+      </view>
+      <view style="margin-top:10px;">优视微校园平台中所涉及到的服务协议 均由优视微校园所属公司（深圳市优视技术有限公司）与你签约。所有服务也由所属于公司提供，包括但不限于收款、 交易安全、消费安全、消费者保障、个人隐私安全等。</view>
+      <view style="margin-top:10px;">您在使用和接受微校园平台网站(以下简称微校园)各项服务前，请先阅读本声明。您访问本网站或使用本网站的任何服务，都视为对本声明全部内容的认可。如您不认可本声明，您应停止使用微校园及相关服务。</view>
+      <view style="text-indent:25px;margin-top:10px;">1、微校园作为网络交易平台，除微校园特定自行销售的产品（或增值服务）外，您从微校园上获取的任何信息均为微校园用户(包括个人用户及商户)自行发布，微校园对其真实性、合法性及有效性不做任何形式的保证，您应自行判断并承担风险。所有责任由该信息发布者承担，微校园对此不承担任何法律责任</view>
+      <view style="text-indent:25px;margin-top:10px;">2、您在微校园登记和发布的任何信息，应对其真实性及合法性负责，不得违反法律法规及微校园相关规则的要求，否则您应自行承担全部法律责任。</view>
+      <view style="text-indent:25px;margin-top:10px;">3、除以微校园名义发出的各类规则、公告外，微校园刊载的各类文章、发布的广告、观点及链接的其他网站内容，仅为提供更多信息以供参考或学习交流，并不代表微校园的立场和观点。</view>
+      <view style="text-indent:25px;margin-top:10px;">4、因本公司系统停机维护、线路故障、硬件故障等造成的暂停服务期间给用户造成的一切损失，微校园不承担任何法律责任。</view>
+      <view style="text-indent:25px;margin-top:10px;">5、因微校园控制范围外的原因(包括但不限于黑客攻击、电信部门技术调整或故障、银行方面原因、不可抗力等)导致微校园无法正常使用，或交易出错，或信息丢失泄漏，或其他一切损失，微校园不承担任何法律责任。但微校园会及时采取相关措施，尽早恢复网站的正常运营。</view>
+      <view style="text-indent:25px;margin-top:10px;">6、微校园尊重用户隐私，承诺不主动向任何第三方泄漏用户隐私，除非符合《隐私条款》信息披露的情形。非因微校园原因造成的信息泄漏，微校园不承担任何法律责任。</view>
+      <view style="text-indent:25px;margin-top:10px;">7、微校园尊重任何人的知识产权。如您认为微校园上的作品或信息侵犯了您的知识产权，您可及时向微校园发出权利通知(详见《作品权利保护声明》)。微校园在收到您的权利通知后，将会尽快处理。</view>
+      <view style="text-indent:25px;margin-top:10px;">8、微校园可能会修订包括本免责声明在内的服务协议、规则、声明等，修订后将在微校园上公告，不再另行通知。您应以最新的规则约束为准。</view>
+      <view style="text-indent:25px;margin-top:10px;">9、认可本协议，代表您已认同优视微校园平台的年费服务，并愿意为微校园平台服务支付年费。</view>
+      <view style="text-indent:25px;margin-top:10px;">10、在法律允许的最大范围内，微校园平台保留对本协议条款的最终解释权。</view>
+      <view style="color:#ff0000;margin-top:10px;">感谢您的认真阅读，欢迎您使用优视微校园，我们竭诚为您孩子的学习、成长保驾护航。</view>
+      <view style="color:#ff0000;margin-top:10px;text-align:right;">深圳市优视技术有限公司</view>
+</view>

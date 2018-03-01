@@ -1,0 +1,23 @@
+<view class="container" style="background-color:#fff;padding-bottom:20px;">
+  <view wx:if="{{list.length == 0}}" class="no-data">【暂无数据】</view>
+  <view class="unit-view" wx:for="{{list}}" wx:key="{{index}}"  data-id="{{item.id}}">
+      <view class="time"><text style="background-color:#E4E4E4;padding:10rpx;border-radius: 5px;">{{item.createTimeCN}}</text></view>
+      <view class="content">
+          <view class="title">{{item.title}}<text wx:if="{{item.status == 2}}" class="new"></text>
+            <text style="float:right;">{{item.className}}</text>
+          </view>
+          <view class="msg">{{item.content}}</view>
+          <view class="img" wx:if="{{item.imgs.length > 0}}">
+                <view class="img-cell" wx:for="{{item.imgs}}" wx:key="{{index}}">
+                  <image src="{{item}}" style="width:80px;height:80px;"></image>
+                </view>
+          </view>
+          <view class="read-all" bindtap="detailtap" data-id="{{item.id}}" data-hid="{{item.homeworkId}}" data-stuid="{{item.studentId}}">
+              <view class="cell-1">查看作业</view>
+              <view class="cell-2">
+                  <image src="/images/message/icon_arrow.png" style="width:25rpx;float:right;" mode="widthFix"></image>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

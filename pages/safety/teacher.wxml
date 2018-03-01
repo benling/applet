@@ -1,0 +1,29 @@
+<!--index.wxml-->
+<view class="container" style="padding-top:0px;">
+   <!--<view class="header">
+        <input class="input"  type="text" placeholder="搜索" placeholder-class="placeholder" style="width:94%;"/>
+  </view>-->
+  <view style="width:100%;height:10px;background-color:#fff;"></view>
+  <view class="margin"></view>
+  <view class="contact-unit" wx:for="{{contactList}}" wx:key="id" wx:for-item="item" wx:for-index="gindex">
+      <view  class="grade-class {{item.open?'active':''}}" bindtap="gradeTap" data-index="{{gindex}}">
+          <text  class="title">{{item.gradeName}}</text>
+          <image src="{{item.open?'/images/contact/open.png':'/images/message/icon_arrow.png'}}" class="{{item.open?'open':'close'}}" mode="widthFix"></image>
+      </view>
+      <view wx:for="{{item.classList}}" wx:key="{{index}}" wx:for-item="class" wx:for-index="cindex" class="{{item.open?'show':'hide'}}">
+          <view class="contact-class {{class.open?'active':''}}" bindtap="classTap" data-gindex="{{gindex}}" data-cindex="{{cindex}}">
+              <text  class="title">{{class.className}}</text>
+              <image src="{{class.open?'/images/contact/open.png':'/images/contact/close.png'}}" class="{{class.open?'open':'close'}}" mode="widthFix"></image>
+          </view>
+          <view class="contact-user {{class.open?'show':'hide'}}">
+                <view class="user-unit" wx:for="{{class.studentList}}" wx:key="id" wx:for-item="user" data-cname="{{class.className}}" data-user="{{user}}" bindtap="userTap">
+                    <view class="user-name">{{user.name}}</view>
+                    <view style="width:80rpx;text-align:center;">
+                      <image src="{{!user.imei ? '/images/safety/ubind.png' : '/images/safety/bind.png'}}" class="user-icon" mode="widthFix"></image>
+                    </view>
+                </view>
+          </view>
+      </view>
+      
+  </view>
+</view>

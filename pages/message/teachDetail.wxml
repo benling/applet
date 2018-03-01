@@ -1,0 +1,17 @@
+<view class="container" style="border-bottom: 1px #ddd solid;">
+    <view class="title">{{item.title}}</view>
+    <view style="padding-left:30rpx; background-color: #fff;">{{item.createTime}}</view>
+    <view class="msg">{{item.context}}</view>
+    <block wx:if="{{item.applyStatus != 0 && item.isApply == 1}}">
+      <view style="background-color:#fff;text-align:right;padding-bottom:10px;">
+            <button type="primary" size="mini" bindtap="agreeTap" style="width:80px;margin-right:20px;">同意</button>
+            <button type="primary" size="mini" bindtap="disgreeTap" style="width:80px;margin-right:20px;">拒绝</button>
+      </view>
+    </block>
+    <block wx:if="{{item.applyStatus != 0 && item.isApply == 2}}">
+          <view class="status">已同意</view>
+    </block>
+    <block wx:if="{{item.applyStatus != 0 && item.isApply == 3}}">
+          <view class="status">已拒绝</view>
+    </block>
+</view>

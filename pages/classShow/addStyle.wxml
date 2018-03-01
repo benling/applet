@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+      <view class="menu {{classType==1?'active':''}}" bindtap="menutap" data-url="../classShow/classStyle">班级动态<view></view></view>
+      <view class="menu {{classType==2?'active':''}}" bindtap="menutap" data-url="../classShow/myStyle">我的动态<view></view></view>
+    </view>
+    <view class="center">
+        <form bindsubmit="formSubmit">
+          <view class="unit">
+            <loading hidden="{{hiddenLoading}}">{{loadingText}}</loading>
+            <view style="width:660rpx;padding:15px;">
+                <textarea bindblur="textBlur" style="width:660rpx;height:100px;"  placeholder="说点什么..." maxlength="256" />
+            </view>
+            <view style="width:660rpx;padding:15px;">
+                <view class="img-cell" wx:for="{{filePaths}}" wx:key="{{index}}">
+                  <image class="img" src="{{item}}"></image>
+                  <image src="/images/support/delete.png" bindtap="deltap" data-index="{{index}}" class="deleteImg" mode="widthFix"></image>
+                </view>
+                <view bindtap="choseImg">
+                  <image src="/images/classShow/choose.png" style="width:170rpx;height:170rpx;"></image>
+                </view>
+            </view>
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{classList}}" range-key="name">
+              <view class="picker">
+                <view class="chose-class">
+                  <view style="width:80rpx;">
+                    <image src="/images/classShow/ren.png" style="width:24px;height:24px;"></image>
+                  </view>
+                  <view style="width:470rpx;">
+                    <text class="picker-text">{{classList[index].name}}</text>
+                  </view>
+                  <view style="width:80rpx;text-align:right;">
+                    <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:10px;" mode="widthFix"/>
+                  </view>
+                </view>
+              </view>
+            </picker>
+        
+            <view style="width:660rpx;">
+              <button form-type="submit" type="primary" class="primary-btn"  bindtap="save" style="width:340rpx;margin: 40px 160rpx;">发布</button>
+            </view>
+          </view>
+        </form>
+    </view>
+</view>

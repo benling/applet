@@ -1,0 +1,5 @@
+<view class="container">
+    <view class="title">{{item.title}}</view>
+    <view style="padding-left:30rpx; background-color: #fff;">{{item.createTimeStr}}</view>
+    <view class="msg">{{item.context}}</view>
+</view>

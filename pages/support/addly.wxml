@@ -1,0 +1,22 @@
+<view class="container" style="height:{{height}}px;background-color:#F0F0F2;">
+  <form bindsubmit="formSubmit">
+    <loading hidden="{{hiddenLoading}}">{{loadingText}}</loading>
+    <view class="label">请输入内容</view>
+    <view class="area-panel">
+      <textarea bindblur="textBlur" style="width:100%;height:120px;"  placeholder="请输入内容..." maxlength="256" />
+    </view>
+    <view class="label">图片</view>
+    <view class="img-panel">
+        <view class="img-cell" wx:for="{{filePaths}}" wx:key="{{index}}">
+          <image class="img" src="{{item}}"></image>
+          <image src="/images/support/delete.png" bindtap="deltap" data-index="{{index}}" class="deleteImg" mode="widthFix"></image>
+        </view>
+        <view bindtap="choseImg" style="padding-left:23rpx;">
+            <image src="/images/classShow/choose.png" style="width:190rpx;height:190rpx;"></image>
+        </view>
+    </view>
+    <view class="button-panel">
+        <button form-type="submit" size="mini" class="wanchengInfo" style="margin-bottom: 20px;">确定</button>
+    </view>
+  </form>
+</view>

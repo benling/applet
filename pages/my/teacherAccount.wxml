@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+        <view style="text-align:center;color:#fff;padding-top:40px;">鲜花</view>
+        <view style="text-align:center;color:#fff;font-size:24px;margin-top:10px;font-weight:bold;">{{item.fee}}</view>
+    </view>
+    <view class="center">
+      <view class="unit">
+          <view class="box">操作记录</view>
+          <view class="box" wx:for="{{item.list}}" wx:key="{{index}}" wx:for-item="obj">
+              <view style="width:650rpx;display: flex;flex-direction: row;">
+                  <view style="width:650rpx;">+{{obj.payFee}}鲜花</view>
+              </view>
+              <view style="width:650rpx;display: flex;flex-direction: row;margin-top:6px;">
+                  <view style="width:350rpx;color:#C7C7C7;">{{obj.wareName}}</view>
+                  <view style="width:300rpx;text-align:center;color:#C7C7C7;">{{obj.payTime}}</view>
+              </view>
+          </view>
+      </view>
+      <!--<view class="unit" wx:if="{{item.rate == 0}}">
+            <view style="text-align:center;padding:30px 0;">暂无排名数据</view>
+      </view>-->
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<view class="container" style="background-color:#fff;">
+  <view class="unit" style="border-bottom:4px #F0F0F0 solid;">
+      <view class="cell-1"><image src="/images/kaoqin/xiaohai.png" class="img"></image></view>
+      <view class="cell-2">学生姓名</view>
+      <view class="cell-3">{{name}}</view>
+  </view>
+  <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <view class="unit" wx:for="{{list}}" wx:key="{{index}}">
+      <view class="cell-1"><image src="/images/kaoqin/shijian.png" class="img"></image></view>
+      <view class="cell-2">{{item.date}}</view>
+      <view class="cell-3">缺勤</view>
+  </view>
+</view>

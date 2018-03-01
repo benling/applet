@@ -1,0 +1,20 @@
+<view class="container" style="padding-bottom:50px;background-color:#fff;">
+  <view class="banner" style="width: 100%;height:160px;">
+    <image src="http://ohg2r16nq.bkt.clouddn.com/image/res/usi-1.png"></image>
+  </view>
+  <view class="unit"  wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx">
+      <view class="title">{{item.name}}</view>
+      <view class="content" wx:for="{{item.childList}}" wx:key="{{index}}" wx:for-item="child" bindtap="detailtap" data-obj="{{child}}">
+          <view class="cell-1">{{child.title}}</view>
+          <view class="cell-2">{{child.createTime}}</view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu">
+            <image src="/images/support/fengcai1.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+      <view class="menu" bindtap="messagetap">
+            <image src="/images/support/me.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+  </view>
+</view>

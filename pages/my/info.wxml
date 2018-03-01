@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="center">
+      <view class="unit">
+          <view style="margin:30px 0;text-align:center;">
+              <image src="{{school.logoUrl}}" style="width:80px;height:80px;"></image>
+          </view>
+          <view style="margin:30px 10px;">学校名称：{{school.name}}</view>
+          <view style="margin:30px 10px;">联系电话：{{school.phone}}</view>
+          <view style="margin:30px 10px;">联系地址：{{school.address}}</view>
+      </view>
+    </view>
+</view>

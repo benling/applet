@@ -1,0 +1,11 @@
+<view class="container" style="height:{{height}}px;background-color:#fff;">
+  <map wx:if="{{hasMap}}" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" bindmarkertap="markertap"  bindcontroltap="controltap" markers="{{markers}}" controls="{{controls}}"  style="width: 100%; height: {{height-60}}px;"></map>
+  <view class="bottom">
+      <view class="menu">
+            <image src="/images/safety/ditu-active.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+      <view class="menu" bindtap="functiontap">
+            <image src="/images/safety/qiehuan.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+  </view>
+</view>

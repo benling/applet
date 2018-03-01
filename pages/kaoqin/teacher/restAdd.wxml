@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;padding-bottom:45px;">
+    <view class="center">
+        <view class="unit" style="padding-bottom:20px;">
+            <view class="week">
+                <view bindtap="weektap" data-index="0"><text class="{{week[0]==1?'active':''}}">一</text></view>
+                <view bindtap="weektap" data-index="1"><text class="{{week[1]==1?'active':''}}">二</text></view>
+                <view bindtap="weektap" data-index="2"><text class="{{week[2]==1?'active':''}}">三</text></view>
+                <view bindtap="weektap" data-index="3"><text class="{{week[3]==1?'active':''}}">四</text></view>
+                <view bindtap="weektap" data-index="4"><text class="{{week[4]==1?'active':''}}">五</text></view>
+                <view bindtap="weektap" data-index="5"><text class="{{week[5]==1?'active':''}}">六</text></view>
+                <view bindtap="weektap" data-index="6"><text class="{{week[6]==1?'active':''}}">日</text></view>
+            </view>
+            <view class="am">
+                <view style="width:92rpx;text-align:center;">
+                  <view style="height: 50px;line-height: 70px;">上</view>
+                  <view style="height: 50px;line-height: 30px;">午</view>
+                </view>
+                <view style="width:558rpx;">
+                    <view style="width:558rpx;height:50px;line-height:50px;border-bottom:1px #ddd solid;display: flex;flex-direction: row;">
+                        <view style="width:258rpx;">
+                          <image src="/images/kaoqin/time1.png" style="width:24px;height:24px;margin-bottom:-7px;"></image>
+                          上学时间
+                        </view>
+                        <view style="width:300rpx;">
+                          <picker mode="time" value="{{amStarttime}}" start="00:00" end="23:59" bindchange="amStartTimeChange">
+                            <view class="picker">
+                              <view style="width:300rpx;height:50px;text-align:right;">{{amStarttime?amStarttime:'选择时间'}}</view>
+                            </view>
+                          </picker>
+                        </view>
+                    </view>
+                    <view style="width:558rpx;height:50px;line-height:50px;display: flex;flex-direction: row;">
+                        <view style="width:258rpx;">
+                          <image src="/images/kaoqin/time1.png" style="width:24px;height:24px;margin-bottom:-7px;"></image>
+                          放学时间
+                        </view>
+                        <view style="width:300rpx;">
+                          <picker mode="time" value="{{amEndtime}}" start="00:00" end="23:59" bindchange="amEndTimeChange">
+                            <view class="picker">
+                              <view style="width:300rpx;height:50px;text-align:right;">{{amEndtime?amEndtime:'选择时间'}}</view>
+                            </view>
+                          </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view style="width:100%;height:5px;background-color:#F0F0F2;"></view>
+            <view class="pm">
+                <view style="width:92rpx;text-align:center;">
+                  <view style="height: 50px;line-height: 70px;">下</view>
+                  <view style="height: 50px;line-height: 30px;">午</view>
+                </view>
+                <view style="width:558rpx;">
+                    <view style="width:558rpx;height:50px;line-height:50px;border-bottom:1px #ddd solid;display: flex;flex-direction: row;">
+                        <view style="width:258rpx;">
+                          <image src="/images/kaoqin/time1.png" style="width:24px;height:24px;margin-bottom:-7px;"></image>
+                          上学时间
+                        </view>
+                        <view style="width:300rpx;">
+                          <picker mode="time" value="{{pmStarttime}}" start="00:00" end="23:59" bindchange="pmStartTimeChange">
+                            <view class="picker">
+                              <view style="width:300rpx;height:50px;text-align:right;">{{pmStarttime?pmStarttime:'选择时间'}}</view>
+                            </view>
+                          </picker>
+                        </view>
+                    </view>
+                    <view style="width:558rpx;height:50px;line-height:50px;display: flex;flex-direction: row;">
+                        <view style="width:258rpx;">
+                          <image src="/images/kaoqin/time1.png" style="width:24px;height:24px;margin-bottom:-7px;"></image>
+                          放学时间
+                        </view>
+                        <view style="width:300rpx;">
+                          <picker mode="time" value="{{pmEndtime}}" start="00:00" end="23:59" bindchange="pmEndTimeChange">
+                            <view class="picker">
+                              <view style="width:300rpx;height:50px;text-align:right;">{{pmEndtime?pmEndtime:'选择时间'}}</view>
+                            </view>
+                          </picker>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view style="text-align:center;padding-top:30px;">
+        <button type="primary" bindtap="savetap" style="width:163px;" disabled="{{disabled}}">确认</button>
+        </view>
+    </view>
+</view>
+

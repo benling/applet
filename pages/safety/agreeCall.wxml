@@ -1,0 +1,44 @@
+<view class="container" style="height:{{height}}px;padding-bottom:65px;">
+  <view class="header">
+      <text style="float:left;margin-left:10rpx;">开启/关闭(允许来电功能)</text>
+      <switch checked="{{checked}}" bindchange="switchChange" style="float:right;"/>
+  </view>
+  <block wx:if="{{checked}}">
+    <view style="width:100%;height:15px;background-color:#F0F0F2;"></view>
+    <view class="unit" wx:for="{{list}}" wx:key="{{index}}">
+      <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" class="inner txt">
+          <view class="cell-1" data-index="{{index}}"><image src="{{item.icon}}"></image></view>
+          <view class="cell-2" data-index="{{index}}">{{item.NM}}</view>
+          <view class="cell-3" data-index="{{index}}">{{item.PC}}</view>
+      </view>
+      <view class="inner mod" bindtap="updatetap" data-id="{{item.ID}}" data-iname="{{item.iname}}" data-nm="{{item.NM}}" data-pc="{{item.PC}}" style="right:180rpx;">修改</view>
+      <view class="inner del" data-id="{{item.ID}}" bindtap="deltap">删除</view>
+    </view>
+  
+    <modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+        <view class="form-unit" style="margin-top:20rpx;">
+          <view class="txt">姓名</view>
+          <view class="content"><input  maxlength="8" bindinput="nameInput" value="{{name}}" placeholder="请输入姓名"/></view>
+        </view>
+        <view class="form-unit">
+          <view class="txt">电话</view>
+          <view class="content"><input  maxlength="15" bindinput="mobileInput" value="{{mobile}}" placeholder="请输入电话号码"/></view>
+        </view>
+        <view class="form-unit">
+          <view class="txt">选择头像</view>
+          <view class="content {{imgClass}}">
+              <image class="baba" bindtap="imgtap" data-name="baba" src="/images/safety/baba.png"></image>
+              <image class="mama" bindtap="imgtap" data-name="mama" src="/images/safety/mama.png"></image>
+              <image class="yeye" bindtap="imgtap" data-name="yeye" src="/images/safety/yeye.png"></image>
+              <image class="nainai" bindtap="imgtap" data-name="nainai" src="/images/safety/nainai.png" style="margin-right:5rpx;"></image>
+          </view>
+        </view>
+        <view style="width:100%;height:50rpx;"></view>
+    </modal> 
+    <!--<view class="add" bindtap="addtap">
+        <image src="/images/common/addTime.png"></image>
+        <text style="margin-left:4rpx;">添加</text>
+    </view>-->
+    <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+  </block>
+</view>

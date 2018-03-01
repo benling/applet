@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;" wx:if="{{shwoPage}}">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit" style="padding-bottom:20px;">
+          <view class="weeks-view">
+              <view style="width:70rpx;"></view>
+              <view class="week">一</view>
+              <view class="week">二</view>
+              <view class="week">三</view>
+              <view class="week">四</view>
+              <view class="week">五</view>
+              <view class="week">六</view>
+              <view class="week">日</view>
+          </view>
+          <view style="width:650rpx;margin:20rpx;text-align:center;" wx:if="{{mors.length == 0 && afts.length == 0}}">暂无数据</view>
+          <view class="morning-view" wx:if="{{mors.length > 0}}">
+              <view  style="width:70rpx;text-align:center;border-right:1px #fff solid;position:relative;">
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-top:-16px;margin-left:-35rpx;">上</view>
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-left:-35rpx;">午</view>
+              </view>
+              <view  style="width:630rpx;">
+                  <view class="schedule-view" wx:for="{{mors}}" wx:key="{{index}}" wx:for-item="row">
+                      <view class="sub" wx:for="{{row}}" wx:key="{{index}}" wx:for-index="colIndex">{{item.subjectName?item.subjectName:'无'}}</view>
+                  </view>
+              </view>
+          </view>
+          <view class="afternoon-view" wx:if="{{afts.length > 0}}" style="margin-top:20px;">
+              <view style="width:70rpx;text-align:center;border-right:1px #fff solid;position:relative;">
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-top:-16px;margin-left:-35rpx;">下</view>
+                  <view style="width:70rpx;height:14px;position:absolute;top:50%;left:50%;margin-left:-35rpx;">午</view>
+              </view>
+              <view style="width:630rpx;">
+                  <view class="schedule-view" wx:for="{{afts}}" wx:key="{{index}}" wx:for-item="row">
+                    <view class="sub" wx:for="{{row}}" wx:key="{{index}}" wx:for-index="colIndex">{{item.subjectName?item.subjectName:'无'}}</view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/index">
+            <image src="/images/kcb/today.png" style="width:45px;height: 40px;"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/schedule">
+            <image src="/images/kcb/kcb-active.png" style="width:42px;height: 40px;"></image>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.week {
+  width:650rpx;
+  height:30px;
+  line-height: 30px;
+  margin:20rpx;
+  padding: 20rpx 0;
+  border-bottom: 1px #EBEBEB solid;
+  display: flex;
+  flex-direction: row;
+}
+.week view{
+  width:92rpx;
+  text-align: center;
+  font-size: 16px;
+  color: #4e4e4e;
+  font-weight: bold;
+}
+.week view .active{
+  width: 24px;
+  height:24px;
+  text-align: center;
+  line-height:24px;
+  background-color: #589DFA;
+  border-radius: 50%;
+  color: #fff;
+  padding: 5px;
+}
+.am,.pm {
+  width:650rpx;
+  height: 100px;
+  line-height: 100px;
+  display: flex;
+  flex-direction: row;
+}

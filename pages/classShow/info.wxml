@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+      <view class="menu {{menu[0]}}" bindtap="menutap" data-url="../classShow/classStyle">班级动态<view></view></view>
+      <view class="menu {{menu[1]}}" bindtap="menutap" data-url="../classShow/myStyle">我的动态<view></view></view>
+    </view>
+    <view class="center">
+      <view class="unit">
+            <view class="row">
+              <view class="top">
+                  <view class="top-1">
+                    <image src="{{item.avatarUrl}}" style="border-radius: 50%;width:48px;height:48px;" mode="widthFix"></image>
+                    <view class="user-info">
+                        <view>
+                          {{item.username}}{{item.roleId == 'D' ? '的'+item.relation : ''}}<text class="CE">{{item.roleName}}</text>
+                        </view>
+                        <text style="margin-left:5px;">{{item.className}}</text>
+                    </view>
+                  </view>
+              </view>
+              <view class="content">{{item.content}}</view>
+              <view class="footer">
+                  <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" class="cell" bindtap="viewImgTap" data-index="{{index}}">
+                      <image src="{{img}}" style="width:80px;height:80px;"></image>
+                  </view>
+              </view>
+              <view style="text-align:right;padding:15px;">
+                <text style="float:left;">{{item.createTime}}</text>
+                <image src="{{isLike == '1'?'/images/common/xin1.png':'/images/common/xin.png'}}" bindtap="liketap" class="like-icon"></image>
+                <text style="margin-right:30px;"> {{item.likeCount}}</text>
+                <image src="{{item.commentCount>0?'/images/common/c1.png':'/images/common/c.png'}}" bindtap="commenttap" data-status="open" class="com-icon"></image>
+                 {{item.commentCount}}
+              </view>
+          </view>
+          <view class="row" wx:for="{{commentList}}" wx:key="{{index}}" wx:for-item="comment">
+              <view class="top">
+                  <view class="top-1">
+                      <image src="{{comment.avatarUrl}}" style="border-radius: 50%;width:48px;height:48px;" mode="widthFix"></image>
+                      <view class="user-info">
+                        <view>
+                          {{comment.username}}{{comment.roleId == 'D' ? '的'+comment.relation : ''}}<text class="CE">{{comment.roleName}}</text>
+                          <text style="margin-left:5px;">{{comment.className}}</text>
+                        </view>
+                        <view>{{comment.createTime}}</view>
+                    </view>
+                  </view>
+              </view>
+              <view class="content">{{comment.content}}</view>
+          </view>
+      </view>
+    </view>
+    <!-- 滑块代码-->
+  <view class="drawer_screen" bindtap="commenttap" data-status="close" wx:if="{{showModalStatus}}"></view> 
+  <view class="slide" wx:if="{{showModalStatus}}">
+     <textarea bindblur="textBlur" fixed="true" style="width:92%;height:120px;border:1px #ddd solid;margin:2%;padding:2%;"  placeholder="说点什么..." maxlength="256" />
+     <button type="primary" size="mini" style="width:40%;margin:10px 30%;" disabled="{{disabled}}" bindtap="addcomment">发布</button>
+  </view>
+</view>

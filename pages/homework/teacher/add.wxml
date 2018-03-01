@@ -1,0 +1,90 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;padding-bottom:45px;">
+    <view class="center">
+        <form>
+          <view class="unit">
+            <loading hidden="{{hiddenLoading}}">{{loadingText}}</loading>
+            <picker bindchange="bindSubjectChange" value="{{sindex}}" range="{{subList}}" range-key="name">
+              <view class="picker">
+                <view class="chose-class">
+                  <view style="width:80rpx;">
+                    科目
+                  </view>
+                  <view style="width:470rpx;text-align: center;">
+                    <text class="picker-text">{{subList[sindex].name}}</text>
+                  </view>
+                  <view style="width:80rpx;text-align:right;">
+                    <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:10px;" mode="widthFix"/>
+                  </view>
+                </view>
+              </view>
+            </picker>
+            <picker bindchange="bindClassChange" value="{{cindex}}" range="{{classList}}" range-key="name">
+              <view class="picker">
+                <view class="chose-class">
+                  <view style="width:80rpx;">
+                    班级
+                  </view>
+                  <view style="width:470rpx;text-align: center;">
+                    <text class="picker-text">{{classList[cindex].name}}</text>
+                  </view>
+                  <view style="width:80rpx;text-align:right;">
+                    <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:10px;" mode="widthFix"/>
+                  </view>
+                </view>
+              </view>
+            </picker>
+            <view style="width:630rpx;padding:10rpx 30rpx;">
+                <textarea bindblur="textBlur" class="area"  placeholder="请输入作业内容..." maxlength="2048" />
+            </view>
+            <view style="width:630rpx;padding:30rpx;padding-bottom:0;display: flex;flex-direction: row;">
+                <view style="margin-top:5px;">语音：</view>
+                <view><button size="mini" bindtouchstart="recordingStart" bindtouchend="recordingEnd" style="width:100px;">{{btnTxt}}</button></view>
+            </view>
+            <view style="width:630rpx;padding:30rpx;padding-bottom:5px;">
+                <view class="voice-unit" wx:for="{{voiceList}}" wx:key="{{index}}">
+                  <block wx:if="{{item.status == 1}}">
+                    <image src="/images/homework/yuyin.png" class="yuyin" bindtap="playtap" data-status="1" data-index="{{index}}" data-url="{{item.filePath}}"></image>
+                  </block>
+                  <block wx:if="{{item.status == 2}}">
+                    <image src="/images/homework/play.gif" class="yuyin" bindtap="playtap" data-status="2" data-index="{{index}}"></image>
+                  </block>
+                  <image src="/images/support/delete.png" class="del-img" bindtap="delVoiceTap" data-index="{{index}}"></image>
+                </view>
+            </view>
+            <view style="width:630rpx;padding:30rpx;">
+                <view class="img-cell" wx:for="{{filePaths}}" wx:key="{{index}}">
+                  <image class="img" src="{{item}}"></image>
+                  <image src="/images/support/delete.png" bindtap="deltap" data-index="{{index}}" class="deleteImg" mode="widthFix"></image>
+                </view>
+                <view bindtap="choseImg">
+                  <image src="/images/classShow/choose.png" style="width:170rpx;height:170rpx;"></image>
+                </view>
+            </view>
+            <view class="commit-type">
+                <view style="width:630rpx;">学生提交作业方式</view>
+                <view style="width:630rpx;margin-top:15px;">
+                    <radio-group class="radio-group" bindchange="radioChange" style="display: flex;flex-direction: row;">
+                      <view style="width:210rpx;">
+                          <label class="radio">
+                            <radio value="1" checked="true"/>文本
+                          </label>
+                      </view>
+                      <view style="width:210rpx;">
+                        <label class="radio">
+                          <radio value="2"/>图片
+                        </label>
+                      </view>
+                      <view style="width:210rpx;">
+                        <label class="radio">
+                          <radio value="3"/>语音
+                        </label>
+                      </view>
+                    </radio-group>
+                </view>
+            </view>
+          </view>
+        </form>
+    </view>
+    <view class="bottom" bindtap="formSubmit">发布</view>
+</view>

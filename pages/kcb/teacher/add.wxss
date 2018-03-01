@@ -1,0 +1,111 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:710rpx;
+  margin:20rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -1px 1px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.center .unit .box {
+  width:690rpx;
+  height: 50px;
+  line-height: 50px;
+  display:flex;
+  flex-direction: row;
+  vertical-align: middle;
+  margin: 0 10rpx;
+  border-bottom: 1px #EBEBEB solid;
+}
+.center .unit .select-view {
+  width:670rpx;
+  display:flex;
+  flex-direction: row;
+  vertical-align: middle;
+  margin: 0 10rpx;
+  border-bottom: 1px #EBEBEB solid;
+  padding: 5px 0;
+}
+.area {
+  width:630rpx;
+  height:100px;
+  border:1px #ddd solid;
+  padding: 20rpx;
+}
+.date-unit {
+  width:240rpx;
+  height: 25px;
+  line-height: 25px;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 5px;
+}
+.date-unit:nth-child(2n) {
+  margin-left: 30rpx;
+}
+.deleteImg{
+  width:16px;
+  height: 16px;
+  margin-bottom:-3px;
+}
+.center .unit .weeks-view{
+  width:690rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0;
+  padding-left: 20rpx;
+  border-bottom: 1px #EBEBEB solid;
+}
+.center .unit .sub-view {
+  width:690rpx;
+  padding: 10px 0;
+  padding-left: 20rpx;
+  border-bottom: 1px #EBEBEB solid;
+}
+.center .unit .weeks-view .week,
+.center .unit .sub-view .sub{
+  width:90rpx;
+  text-align: center;
+}
+.center .unit .weeks-view .week view{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.center .unit .weeks-view .week .active{
+    border: 1px #48C23D solid;
+    background-color: #48C23D;
+    border-radius: 50%;
+    color: #fff;
+}
+.sub-unit {
+  width:80rpx;
+  height:auto;
+  border: 1px #ddd solid;
+  text-align: center;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 5px 0;
+}
+.row-start-time {
+  width:120rpx;
+  height:25px;
+  line-height: 25px;
+  text-align:center;
+  border:1px #ddd solid;
+  margin-left:210rpx;
+  font-size: 12px;
+}
+.row-end-time {
+  width:120rpx;
+  height:25px;
+  line-height: 25px;
+  text-align:center;
+  border:1px #ddd solid;
+  font-size: 12px;
+}

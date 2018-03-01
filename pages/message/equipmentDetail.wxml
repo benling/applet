@@ -1,0 +1,12 @@
+<view class="container" style="border-bottom: 1px #ddd solid;">
+    <view class="title">{{item.title}}</view>
+    <view style="padding-left:30rpx; background-color: #fff;">{{item.createTime}}</view>
+    <view class="msg">{{item.context}}</view>
+    <view style="background-color:#fff;text-align:right;padding-bottom:10px;" wx:if="{{item.type == 1 && item.alarmId}}">
+          <button type="primary" size="mini" bindtap="shangbaotap"  style="width:80px;margin-right:20px;">求助</button>
+    </view>
+</view>
+<loading hidden="{{hiddenLoading}}">正在发送求助</loading>
+<modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="发送" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+       <textarea bindblur="textBlur" class="area"  placeholder="求助原因..." maxlength="128" />
+</modal> 

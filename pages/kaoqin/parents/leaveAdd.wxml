@@ -1,0 +1,47 @@
+<view class="container" style="background-color:#fff;">
+<form bindsubmit="formSubmit">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit">
+          <view class="box">
+              <view style="width:200rpx;">请假日期</view>
+              <view style="width:450rpx;">
+                  <picker mode="date" value="{{leaveDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="leaveDateChange">
+                    <view class="picker">
+                      <view style="width:420rpx;height:50px;text-align:right;padding-right:30rpx;">{{leaveDate}}</view>
+                    </view>
+                  </picker>
+              </view>
+          </view>
+          <view class="box">
+              <view style="width:200rpx;">开始时段</view>
+              <view style="width:420rpx;text-align：right;padding-right:30rpx;">
+                  <radio-group class="radio-group" bindchange="radioChange">
+                    <label class="radio">
+                      <radio value="1" checked="checked"/>上午
+                    </label>
+                    <label class="radio" style="margin-left:30px;">
+                      <radio value="2"/>下午
+                    </label>
+                  </radio-group>
+              </view>
+          </view>
+          <view class="box">
+              <view style="width:200rpx;">请假时长</view>
+              <view style="width:450rpx;">
+                  <picker bindchange="daysChange" value="{{duration}}" range="{{days}}">
+                    <view class="picker">
+                      <view style="width:420rpx;height:50px;text-align:right;padding-right:30rpx;">{{days[duration]}}</view>
+                    </view>
+                  </picker>
+              </view>
+          </view>
+          <view style="width:650rpx;height:150px;margin: 20px 20rpx;">
+              <textarea bindblur="textBlur" class="area"  placeholder="请假原因..." maxlength="256" />
+          </view>
+      </view>
+      <view style="text-align:center;padding-top:30px;">
+          <button type="primary" form-type="submit" style="width:163px;" disabled="{{disabled}}">确认</button>
+      </view>
+   </view>
+  </form>
+</view>

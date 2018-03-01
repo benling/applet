@@ -1,0 +1,76 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+        <view class="count">
+            <!--<view class="number">{{item.rate}}%</view>-->
+            <!--<view class="text">上周完成率</view>-->
+            {{item.rate}}%
+        </view>
+        <block wx:if="{{choseInfo.roleId != 'D'}}">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{classList}}" range-key="name">
+              <view class="picker">
+                  <view class="user-class">{{classList[index].name}}
+                  <image src="/images/classShow/chose.png" style="width:15px;height:15px;margin-bottom:-2px;"></image>
+                  </view>
+              </view>
+            </picker>
+        </block>
+         <block wx:if="{{choseInfo.roleId == 'D'}}">
+            <view class="user-class">
+            {{classList[0].name}}
+            </view>
+        </block>
+        
+    </view>
+    <view class="message">
+        <view style="width:375rpx;color:#fff;">已到:{{item.arrived}}人</view>
+        <view style="width:375rpx;color:#fff;">未到:{{item.nonArrival}}人</view>
+    </view>
+    <view style="width:750rpx;margin:10px 0;text-align:center;">
+      <text class="query-days {{queryType==4?'active':''}}" bindtap="chosetap" data-type="4">今天</text>
+      <text class="query-days {{queryType==3?'active':''}}" bindtap="chosetap" data-type="3" style="margin-left: 10px;">昨天</text>
+      <text class="query-days {{queryType==1?'active':''}}" bindtap="chosetap" data-type="1" style="margin-left: 10px;">本周</text>
+      <text class="query-days {{queryType==2?'active':''}}" bindtap="chosetap" data-type="2" style="margin-left: 10px;">本月</text>
+    </view>
+    <view class="center">
+      <view class="unit">
+           <view style="width:650rpx;margin:20rpx 0;padding:0 20rpx;border-left:5px #589EF9 solid;">相比昨天</view>
+           <view style="width:650rpx;margin:0 20rpx;padding:40rpx 0;display: flex;flex-direction: row;border-bottom:1px #ddd solid;">
+              <view class="y-late" style="width:350rpx;">昨天迟到{{item.yesterDayLate}}人</view>
+              <view class="t-late" style="width:350rpx;">今天迟到{{item.todayLate}}人</view>
+           </view>
+           <block wx:if="{{queryType == 3 || queryType == 4}}">
+              <view style="width:650rpx;margin:30rpx 0;padding:0 20rpx;border-left:5px #589EF9 solid;">早起的鸟儿有虫吃</view>
+              <block wx:for="{{item.earlyList}}" wx:key="{{index}}">
+                  <view class="ranking">
+                      <view class="xingxing" style="width:{{510-(index*80)}}rpx;">
+                          {{item.time}}
+                      </view>
+                      <view class="username">{{item.name}}</view>
+                  </view>
+              </block>
+              <view style="width:650rpx;margin:20rpx;text-align:center;" wx:if="{{item.earlyList.length == 0}}">暂无数据</view>
+           </block>
+           <block wx:if="{{queryType == 1 || queryType == 2}}">
+              <view style="width:650rpx;margin:30rpx 0;padding:0 20rpx;border-left:5px #589EF9 solid;">迟到排行榜</view>
+              <block wx:for="{{item.lateList}}" wx:key="{{index}}">
+                  <view class="ranking">
+                      <view class="xingxing" style="width:{{510-(index*80)}}rpx;">
+                          {{item.count}}
+                      </view>
+                      <view class="username">{{item.name}}</view>
+                  </view>
+              </block>
+              <view style="width:650rpx;margin:20rpx;text-align:center;" wx:if="{{item.lateList.length == 0}}">暂无数据</view>
+           </block>
+          <!--<view style="width:650rpx;padding:20rpx;">今天考勤结果:
+            <text wx:if="{{item.rate >= 90}}"  style="color:#589EF9;font-weight:bold;">优秀</text>
+            <text wx:if="{{item.rate >= 60 && item.rate < 90}}" style="color:#589EF9;font-weight:bold;">良好</text>
+            <text wx:if="{{item.rate < 60}}" style="color:#589EF9;font-weight:bold;">较差</text>
+           </view>-->
+      </view>
+      <!--<view class="unit" wx:if="{{item.rate == 0}}">
+            <view style="text-align:center;padding:30px 0;">暂无排名数据</view>
+      </view>-->
+    </view>
+</view>

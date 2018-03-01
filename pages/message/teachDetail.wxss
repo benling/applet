@@ -1,0 +1,25 @@
+
+.title {
+  width:690rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.msg {
+  width:690rpx;
+  padding: 30rpx;
+  background-color: #fff;
+}
+.area {
+  width:96%;
+  height:100px;
+  padding: 2%;
+}
+.status {
+  width:690rpx;
+  padding: 30rpx;
+  border-bottom: 1px #ddd solid;
+  background-color: #fff;
+  text-align: right;
+}
+

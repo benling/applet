@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view wx:if="{{news.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <view class="news-view" wx:for="{{news}}" wx:key="id" wx:for-item="item" bindtap="newsTap" data-obj="{{item}}">
+      <view class="content">
+          <view class="title">{{item.shortTitle?item.shortTitle:item.title}}</view>
+          <view class="text">{{item.digest}}</view>
+      </view>
+      <view class="img"><image src="{{item.img}}" style="width:96%;height:70px;"></image></view>
+  </view>
+</view>

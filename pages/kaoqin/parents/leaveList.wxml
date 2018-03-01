@@ -1,0 +1,48 @@
+<view class="container" style="background-color:#fff;padding-bottom:50px;">
+  <view class="center" style="padding-bottom:50px;">
+      <!--<view class="unit">
+          <view class="box" style="border-bottom:none;" bindtap="addtap">
+            <image src="/images/school/add.png" style="width:24px;height:24px;margin-top:12px;"></image>
+            <text style="margin-left:10px;">新增请假条</text>
+          </view>
+      </view>-->
+      <image src="/images/classShow/add.png" class="addImg" bindtap="addtap" style="bottom:50px;"></image>
+      <view class="unit" wx:for="{{list}}" wx:key="{{index}}" style="padding-bottom:10px;">
+          <view class="header">
+              <view style="width:110rpx;text-align:center;">
+                <image src="{{item.avatar}}" style="border-radius: 50%;width:45px;height:45px;"></image>
+              </view>
+              <view style="width:420rpx;padding-top:3px;">
+                  <view>
+                    <text>{{item.studentName}}的{{item.relation}}</text>
+                    <text style="color:#C2C2C2;margin-left:10px;">{{item.className}}</text>
+                  </view>
+                  <view style="margin-top:5px;color:#C2C2C2;">
+                    <text>{{item.createTime}}</text>
+                  </view>
+              </view>
+              <view style="width:120rpx;">
+                  <text wx:if="{{item.status == 1}}" class="apply">申请中</text>
+                  <text wx:if="{{item.status == 2}}" class="agree">已同意</text>
+                  <text wx:if="{{item.status == 3}}" class="refuse">未同意</text>
+              </view>
+          </view>
+          <view class="content" style="padding-top:0;">
+            <view style="color:#C2C2C2;">开始时间：{{item.startTime}}{{item.begin == 1?'上午':'下午'}}</view>
+            <view style="margin-top:7px;color:#C2C2C2;">请假时长：{{item.duration}}</view>
+            <view style="margin-top:7px;color:#C2C2C2;">{{item.content}}</view>
+          </view>
+          <view class="footer">
+            <image src="/images/classShow/del.png" wx:if="{{item.status == 1}}" catchtap="deltap" class="del-img" data-id="{{item.id}}" data-index="{{index}}"></image>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/index">
+            <image src="/images/kaoqin/kq.png" style="width:24px;height: 40px;"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/leaveList">
+            <image src="/images/kaoqin/qj-active.png" style="width:24px;height: 40px;"></image>
+      </view>
+  </view>
+</view>

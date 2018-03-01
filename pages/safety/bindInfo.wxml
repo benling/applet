@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+    <view class="center">
+      <view class="unit">
+            <view style="padding:15px;border-bottom:1px #ddd solid;">
+                <text>姓名</text>
+                <text style="margin-left:20px;">{{data.name}}</text>
+                <block wx:if="{{data.sex == 1}}">
+                    <image src="/images/my/gg.png" style="width:30rpx;margin:0 10px;" mode="widthFix"/>
+                </block>
+                <block wx:if="{{data.sex == 2}}">
+                    <image src="/images/my/mm.png" style="width:30rpx;margin:0 10px;" mode="widthFix"/>
+                </block>
+            </view>
+            <view style="padding:15px;border-bottom:1px #ddd solid;">
+                <text>班级</text>
+                <text style="margin-left:20px;">{{data.className}}</text>
+            </view>
+            <view style="padding:15px;border-bottom:1px #ddd solid;">
+                <text>IMEI</text>
+                <text style="margin-left:20px;">{{data.imei}}</text>
+            </view>
+      </view>
+    </view>
+</view>

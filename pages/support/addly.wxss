@@ -1,0 +1,52 @@
+.label {
+  width: 730rpx;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 20rpx;
+  color: #989898;
+}
+.img-panel {
+  width: 690rpx;
+  padding: 30rpx;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+}
+.img-panel .img-cell{
+  width: 230rpx;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+}
+.img-panel .img-cell .img{
+  width: 190rpx;
+  height: 190rpx;
+}
+.img-panel .img-cell .deleteImg{
+  width:24px;
+  position:absolute;
+  right:-5px;
+  top:-5px;
+}
+.area-panel {
+  width: 690rpx;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+}
+.button-panel {
+  width: 750rpx;
+  text-align: center;
+  margin-top: 40px;
+}
+.wanchengInfo{
+	width:40%;
+	background: #14d212;
+	margin:0 auto;
+	color:#fff;
+	padding: 4px 0 !important;
+}
+.textarea {
+  width:730rpx;
+  height:120px;
+  background-color:#fff;
+  padding: 10rpx;
+}

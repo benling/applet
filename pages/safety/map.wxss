@@ -1,0 +1,16 @@
+.bottom {
+  width:100%;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:45px;
+  line-height:45px;
+  vertical-align: middle;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+}
+.bottom .menu {
+  float:left;
+  width:50%;
+  text-align:center;
+}

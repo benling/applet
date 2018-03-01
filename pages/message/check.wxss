@@ -1,0 +1,53 @@
+.unit-view {
+  width:750rpx;
+}
+.unit-view .time {
+  width:100%;
+  text-align: center;
+  padding-top:30px;
+  padding-bottom: 15px;
+}
+.unit-view .content {
+  width:670;
+  background-color: #fff;
+  border: 1px #ddd solid;
+  border-radius: 5px;
+  margin: 0 40rpx;
+}
+.unit-view .content .title {
+  width:610rpx;
+  font-weight: bold;
+  padding: 30rpx;
+}
+.unit-view .content .img {
+  width:610rpx;
+  padding: 30rpx;
+}
+.unit-view .content .msg {
+  width:610rpx;
+  padding: 0 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px #ddd solid;
+}
+.unit-view .content .read-all {
+  width:610rpx;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+.unit-view .content .read-all .cell-1{
+  width:300rpx;
+}
+.unit-view .content .read-all .cell-2{
+  width:310rpx;
+  text-align: right;
+}
+.new {
+  display: inline-block;
+  width:5px;
+  height:5px;
+  background-color:#FF0000;
+  border-radius:50%;
+  position: relative;
+  top:-15px;
+}

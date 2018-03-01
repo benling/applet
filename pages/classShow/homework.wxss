@@ -1,0 +1,89 @@
+.header {
+  width:750rpx;
+  height: 200px;
+  background-color: #f08537;
+}
+.header .count{
+  width:120px;
+  height:120px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin:0 auto;
+  position: relative;
+  top:20px;
+  text-align: center;
+}
+.header .user-class{
+  width:750rpx;
+  position: relative;
+  top:40px;
+  text-align: center;
+  color: #fff;
+}
+.header .count .number{
+  color:#FFD490;
+  padding-top:30px;
+  font-size:20px;
+  font-weight: bold;
+}
+.header .count .text{
+  width: 80px;
+  color:#589EF9;
+  margin-top:10px;
+  border: 1px #589EF9 solid;
+  border-radius: 10px;
+  margin-left:15px;
+  padding:3px 4px;
+}
+.message {
+  width: 750rpx;
+  display: flex;
+  flex-direction: row;
+  text-align:center;
+  padding: 10px 0;
+  background-color: #F5A158;
+}
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.ranking {
+  width:650rpx;
+  padding:20rpx;
+  display: flex;
+  flex-direction: row;
+}
+.ranking .img{
+  width:60rpx;
+  text-align: center;
+}
+.ranking .xingxing{
+  width:420rpx;
+  height:16px;
+  line-height:16px;
+  background-color:#FFD591;
+  text-align: center;
+  color: #f08537;
+  border-radius: 8px;
+}
+.ranking .username{
+  width:140rpx;
+  margin-left: 10rpx;
+}
+.sz {
+  width: 16px;
+  height: 16px;
+  line-height:16px;
+  color: #589EF9;
+  border: 1px #589EF9 solid;
+  border-radius: 50%;
+}

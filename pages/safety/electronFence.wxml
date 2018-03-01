@@ -1,0 +1,19 @@
+<view class="container" style="height:{{height}}px;padding-bottom:65px;">
+  <view style="width:100%;height:6rpx;background-color:#F0F0F2;"></view>
+  <view class="unit" wx:for="{{list}}" wx:key="{{index}}">
+    <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" class="inner txt">
+      <view class="row">
+        <view class="cell-1" data-index="{{index}}"><image src="/images/safety/electron.png"></image></view>
+        <view class="cell-2" data-index="{{index}}">{{item.name}}</view>
+        <view class="cell-3" data-index="{{index}}">半径{{item.regionpoint.point}}米</view>
+      </view>
+    </view>
+    <view class="inner mod" bindtap="modtap" data-region="{{item}}" style="right:180rpx;">修改</view>
+    <view class="inner del" bindtap="deltap" data-id="{{item.regionid}}">删除</view>
+  </view>
+  <!--<view class="add" bindtap="addtap">
+      <image src="/images/common/addTime.png"></image>
+      <text style="margin-left:4rpx;">添加</text>
+  </view>-->
+  <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+</view>

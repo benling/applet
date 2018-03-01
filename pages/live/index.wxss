@@ -1,0 +1,28 @@
+.unit {
+  width:710rpx;
+  margin: 0 20rpx;
+}
+.unit .box {
+  width: 355rpx;
+  text-align: center;
+  padding: 10px 0;
+  display: inline-block;
+}
+.unit .box image{
+  width: 325rpx;
+  height:100px;
+}
+.unit .box .live {
+  color: #589EF9;
+  border: 1px #589EF9 solid;
+  padding: 2px 5px;
+  font-size: 12px;
+}
+.unit .box .class-unit {
+  width:325rpx;
+  border: 1px #EBEBEB solid;
+  box-shadow:0 1px 1px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+  padding:6px 0;
+  margin: -3px auto;
+}

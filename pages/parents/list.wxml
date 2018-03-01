@@ -1,0 +1,19 @@
+<view class="container" style="background-color:#fff;">
+ <view class="header">
+      <view class="menu {{check[0]}}" bindtap="menutap" data-id="1">教育<view></view></view>
+      <view class="menu {{check[1]}}" bindtap="menutap" data-id="2">健康<view></view></view>
+      <view class="menu {{check[2]}}" bindtap="menutap" data-id="3">学科<view></view></view>
+      <view class="menu {{check[3]}}" bindtap="menutap" data-id="4">心理<view></view></view>
+      <view class="menu {{check[4]}}" bindtap="menutap" data-id="5">情感<view></view></view>
+      <view class="menu {{check[5]}}" bindtap="menutap" data-id="6">其他<view></view></view>
+  </view>
+  <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <view class="unit-view" wx:for="{{list}}" wx:key="id" bindtap="unittap" data-id="{{item.id}}">
+      <view class="img"><image src="{{item.img}}" style="width:96%;height:70px;"></image></view>
+      <view class="content">
+          <view class="title">{{item.shortTitle?item.shortTitle:item.title}}</view>
+          <view class="text">{{item.digest}}</view>
+          <view class="read-count">阅读数：{{item.readCount}}</view>
+      </view>
+  </view>
+</view>

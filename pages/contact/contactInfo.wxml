@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+    <view style="width:750rpx;position: relative;">
+      <image src="/images/my/header.png" style="width:750rpx;margin-top:-3px;" mode="widthFix"/>
+      <view class="userinfo">
+          <view class="logo">
+                <block wx:if="{{data.avatarUrl}}">
+                  <image src="{{data.avatarUrl}}" style="width:160rpx;" mode="widthFix"/>
+                </block>
+                <block wx:if="{{!data.avatarUrl}}">
+                  <image src="/images/contact/none.png" style="width:160rpx;" mode="widthFix"/>
+                </block>
+          </view>
+          <view class="username">
+            {{data.name}}
+            <block wx:if="{{data.sex == 1}}">
+                <image src="/images/my/gg.png" style="width:30rpx;margin:2 5px;" mode="widthFix"/>
+            </block>
+            <block wx:if="{{data.sex == 2}}">
+                <image src="/images/my/mm.png" style="width:30rpx;margin:2 5px;" mode="widthFix"/>
+            </block>
+          </view>
+          <view class="basic">
+            <text class="userclass" wx:if="{{data.className}}">{{data.className}}</text>
+          </view>
+      </view>
+    </view>
+    <view class="center" style="position: relative;">
+      <view class="unit" style="position: absolute;top:-80px;left:0;">
+          <view class="box">
+                <view style="padding:15px;border-bottom:1px #ddd solid;">
+                  <text>手机号</text>
+                  <text class="call" bindtap="calltap" data-num="{{data.mobile}}">{{data.mobile}}</text>
+              </view>
+              <view style="padding:15px;border-bottom:1px #ddd solid;">
+                <block wx:if="{{data.roleId == 'D'}}">
+                  <text>关  <text style="margin-left:10px;">系</text></text>
+                  <text style="margin-left:20px;">{{data.relation}}</text>
+                </block>
+                <block wx:if="{{data.roleId != 'D'}}">
+                  <text>职  <text style="margin-left:14px;">位</text></text>
+                  <text style="margin-left:20px;">{{data.roleName}}</text>
+                </block>
+              </view>
+          </view>
+      </view>
+    </view>
+</view>

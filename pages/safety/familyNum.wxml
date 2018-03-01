@@ -1,0 +1,21 @@
+<view class="container" style="height:{{height}}px;padding-top:10px;">
+  <view class="unit" wx:for="{{familys}}" wx:key="{{index}}">
+    <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" class="inner txt">
+      <view class="cell-1" data-index="{{index}}"><image src="{{item.icon}}"></image></view>
+      <view class="cell-2" data-index="{{index}}">{{item.name}}</view>
+      <view class="cell-3" data-index="{{index}}">{{item.mobile}}</view>
+    </view>
+    <view class="inner mod" bindtap="updatetap" data-index="{{index}}" data-name="{{item.name}}" data-mobile="{{item.mobile}}">修改</view>
+  </view>
+  <modal class="modal" hidden="{{modalFlag}}" title="修改亲情号码" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+      <view class="form-unit" style="margin-top:20rpx;">
+        <view class="txt">姓名</view>
+        <view class="content"><input  maxlength="8" value="{{name}}" bindinput="nameInput" placeholder="请输入姓名"/></view>
+      </view>
+      <view class="form-unit">
+        <view class="txt">号码</view>
+        <view class="content"><input  maxlength="15" value="{{mobile}}" bindinput="mobileInput" placeholder="请输入电话号码"/></view>
+      </view>
+      <view style="width:100%;height:50rpx;"></view>
+  </modal> 
+</view>

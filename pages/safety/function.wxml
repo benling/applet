@@ -1,0 +1,46 @@
+<view class="container" style="height:{{height}}px;padding-top:10px;">
+  <view class="unit" data-url="../safety/familyNum" bindtap="unittap">
+    <image src="/images/safety/famliy_number.png"></image>
+    <text>亲情号码</text>
+  </view>
+  <view class="unit" data-url="../safety/agreeCall" bindtap="unittap">
+    <image src="/images/safety/call.png"></image>
+    <text>允许来电</text>
+  </view>
+  <view class="unit" data-url="../safety/notdisturb" bindtap="unittap">
+    <image src="/images/safety/not_disturb.png"></image>
+    <text>免扰时段</text>
+  </view>
+  <view class="unit" style="margin-top:10px;" data-url="../safety/position" bindtap="unittap">
+    <image src="/images/safety/location_set.png"></image>
+    <text>定位设置</text>
+  </view>
+  <view class="unit" data-url="../safety/electronFence" bindtap="unittap">
+    <image src="/images/safety/electron.png"></image>
+    <text>电子围栏</text>
+  </view>
+  <view class="unit" data-url="../safety/trackQuery" bindtap="unittap">
+    <image src="/images/safety/guiji.png"></image>
+    <text>轨迹查询</text>
+  </view>
+  <view class="unit" style="margin-top:10px;" data-url="../safety/battery" bindtap="unittap">
+    <image src="/images/safety/dianliang.png"></image>
+    <text>电量查询</text>
+  </view>
+  <view class="unit" data-url="../safety/warning" bindtap="unittap">
+    <image src="/images/safety/waring_msg.png"></image>
+    <text>报警信息</text>
+  </view>
+  <!-- <view class="unit" data-url="../safety/addEquipment" bindtap="unittap">
+    <image src="/images/safety/add_card.png"></image>
+    <text>添加学生安全设备</text>
+  </view> -->
+  <view class="bottom">
+      <view class="menu" bindtap="maptap">
+            <image src="/images/safety/ditu.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+      <view class="menu">
+            <image src="/images/safety/qiehuan-active.png" style="width:28px;margin-top:8px;" mode="widthFix"></image>
+      </view>
+  </view>
+</view>

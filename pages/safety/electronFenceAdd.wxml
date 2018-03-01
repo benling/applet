@@ -1,0 +1,17 @@
+<view class="container" style="height:{{height}}px;">
+  <view class="header">
+       <view class="cell-1">300米</view>
+       <view class="cell-2"><slider bindchange="sliderChange"  min="300" max="3000" value="{{radius}}" step="1" activeColor="#48C23D"/></view>
+       <view class="cell-3">3000米</view>
+  </view>
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" circles="{{circles}}" scale="13"
+  style="width: 100%; height: {{height-100}}px;"></map>
+  <view class="bottom">
+      <view class="cell-1">
+          <input placeholder="电子围栏名称" value="{{name}}" bindinput="nameInput" placeholder-style="font-size:14px;"/>
+      </view>
+      <view class="cell-2">
+          <button type="primary" size="mini"   plain="{{plain}}" disabled="{{disabled}}" bindtap="save">确定 </button>
+      </view>
+  </view>
+</view>

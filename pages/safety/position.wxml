@@ -1,0 +1,53 @@
+<view class="container" style="height:{{height}}px;padding-bottom:65px;">
+  <view style="width:100%;height:6rpx;background-color:#F0F0F2;"></view>
+  <view class="unit" wx:for="{{list}}" wx:key="{{index}}">
+    <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" class="inner txt">
+      <view class="row">
+        <view class="cell-1" data-index="{{index}}"><image src="/images/safety/location_set.png"></image></view>
+        <view class="cell-2" data-index="{{index}}">{{item.name}}</view>
+        <view class="cell-3" data-index="{{index}}">频率:{{item.interval}}分钟</view>
+        <view class="cell-4" data-index="{{index}}">{{item.time}}</view>
+      </view>
+    </view>
+    <view class="inner mod" bindtap="modtap" data-obj="{{item}}" style="right:180rpx;">修改</view>
+    <view class="inner del" bindtap="deltap" data-id="{{item.id}}">删除</view>
+  </view>
+  <modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="save"> 
+      <view class="form-unit" style="margin-top:20rpx;">
+        <view class="txt"><image src="/images/common/time.png" style="width:44rpx;height:44rpx;margin-bottom:-6rpx;"></image> 开始时间</view>
+        <view class="content">
+            <picker mode="time" value="{{stime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+              <view class="picker">
+                <view style="width:100%;height:65rpx;">{{stime}}</view>
+              </view>
+            </picker>
+        </view>
+      </view>
+      <view class="form-unit">
+        <view class="txt"><image src="/images/common/time.png" style="width:44rpx;height:44rpx;margin-bottom:-6rpx;"></image> 结束时间</view>
+        <view class="content">
+            <picker mode="time" value="{{etime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+              <view class="picker">
+                <view style="width:100%;height:65rpx;">{{etime}}</view>
+              </view>
+            </picker>
+        </view>
+      </view>
+      <view class="form-unit">
+        <view class="txt"><image src="/images/safety/shangbao.png" style="width:44rpx;height:44rpx;margin-bottom:-6rpx;"></image> 上报频率</view>
+        <view class="content">
+            <picker value="{{interval}}" range="{{intervalList}}" bindchange="bindIntervalChange">
+              <view class="picker">
+                <view style="width:100%;height:65rpx;">{{intervalList[interval]}}分钟</view>
+              </view>
+            </picker>
+        </view>
+      </view>
+      <view style="width:100%;height:50rpx;"></view>
+  </modal> 
+  <!--<view class="add" bindtap="addtap">
+      <image src="/images/common/addTime.png"></image>
+      <text style="margin-left:4rpx;">添加</text>
+  </view>-->
+  <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+</view>

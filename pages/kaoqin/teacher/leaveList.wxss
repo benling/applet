@@ -1,0 +1,77 @@
+.unit {
+  background-color:#fff;
+	width:710rpx;
+  border-bottom:3px #F0F0F0 solid;
+  padding:20rpx;
+  font-size: 12px;
+}
+.unit .header {
+  width:710rpx;
+  display: flex;
+  flex-direction: row;
+}
+.unit .content {
+  width:710rpx;
+}
+.unit .footer {
+  width:710rpx;
+  text-align: center;
+  border-top: 1px #ddd dashed;
+  padding:10px 0;
+  display: flex;
+  flex-direction: row;
+}
+.bottom {
+  width:750rpx;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:50px;
+  background-color: #FFFFFF;
+  border-top:1px #ddd solid;
+  display:flex;
+  flex-direction: row;
+}
+.bottom .menu {
+  width:375rpx;
+  text-align:center;
+  margin-top:5px;
+}
+.agree {
+  width: auto;
+  display: inline-block;
+  margin-top:8px;
+  padding:4px 5px;
+  background-color: #F0F0F0;
+  color:#14D212;
+  font-size: 12px;
+  border-radius: 10px;
+}
+.refuse {
+  width: auto;
+  display: inline-block;
+  margin-top:8px;
+  padding:4px 5px;
+  background-color: #F0F0F0;
+  font-size: 12px;
+  border-radius: 10px;
+  color:#ff0000;
+}
+.refuse-btn {
+  width:160rpx;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #ff0000;
+  color: #fff;
+  margin-left: 120rpx;
+}
+.agree-btn {
+  width:160rpx;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  background-color: #14D212;
+  color: #fff;
+  margin-left:150rpx;
+}

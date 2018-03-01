@@ -1,0 +1,144 @@
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.chose-class {
+  width:630rpx;
+  height: 24px;
+  line-height: 24px;
+  margin:30rpx;
+  padding: 15px 0;
+  display: flex;
+  flex-direction: row;
+  border-top:1px #ddd solid;
+  border-bottom:1px #ddd solid;
+}
+.range-class {
+  width:630rpx;
+  height: 55px;
+  line-height: 55px;
+  margin:0 30rpx;
+  display: flex;
+  flex-direction: row;
+  border-top:1px #ddd solid;
+  border-bottom:1px #ddd solid;
+}
+
+.area {
+  width:590rpx;
+  height:100px;
+  border:1px #ddd solid;
+  padding: 20rpx;
+}
+.bottom {
+  width: 750rpx;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  position: fixed;
+  bottom: 0;
+  left:0;
+  background-color: #f08537;
+  border-radius: 0;
+}
+.commit-type {
+  width:630rpx;
+  padding:10rpx 30rpx;
+  padding-bottom:30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.slide {
+  position:absolute;
+  top:0;
+  right:0;
+  transition: all 1s ease-in;
+  background-color:#fff;
+  z-index:999999;
+  width:650rpx;
+}
+.contact-unit {
+  width:650rpx;
+  background-color: #fff;
+}
+.contact-unit .contact-class{
+  width:650rpx;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border-top: 1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+  margin-bottom:-1px; 
+  display: flex;
+  flex-direction: row;
+}
+.contact-unit .class-unit{
+  width:590rpx;
+  height: 40px;
+  line-height: 40px;
+  vertical-align: middle;
+  border-top: 1px #ddd solid;
+  border-bottom: 1px #ddd solid;
+  margin-bottom:-1px; 
+  margin-left:60rpx;
+  display: flex;
+  flex-direction: row;
+}
+.contact-unit .contact-class.active,.contact-unit .class-unit.active{
+   color:#2595FC;
+}
+.contact-unit .contact-class.active  .name-txt,.contact-unit .class-unit.active .name-txt{
+   color:#2595FC;
+}
+.contact-unit .contact-user{
+  width:570rpx;
+}
+.contact-unit .contact-class .open ,.contact-unit .class-unit .open{
+  width:15px;
+  float:right;
+  margin-top:15px;
+  margin-right:10px;
+}
+.contact-unit .contact-class .close ,.contact-unit .class-unit .close{
+  width:10px;
+  float:right;
+  margin-top:12px;
+  margin-right:10px;
+}
+.contact-unit .contact-user .user-unit{
+  width:570rpx;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  border-bottom:1px #ddd solid;
+  margin-bottom:-1px; 
+  display: flex;
+  flex-direction: row;
+}
+.contact-unit .contact-user .user-unit .user-icon{
+    width:40px;
+    margin-top:5px;
+}
+.contact-unit .contact-user .user-unit .user-name{
+    padding-left:10px;
+    position:relative;
+    top:-15px;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

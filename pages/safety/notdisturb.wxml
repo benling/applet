@@ -1,0 +1,75 @@
+<view class="container" style="height:{{height}}px;background-color:#F0F0F2;padding-bottom:65px;">
+  <view class="header {{isShow}}" style="margin-bottom:20rpx;">
+      <text style="float:left;margin-left:10rpx;">开启/关闭(免打扰功能)</text>
+      <switch checked="{{checked}}" bindchange="switchChange" style="float:right;"/>
+  </view>
+  <block wx:if="{{checked}}">
+    <block wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx" wx:for-item="obj">
+       <view class="{{isShow}}" style="width:100%;height:20rpx;background-color:#F0F0F2;"></view>
+       <view class="title {{showTitle}}">
+            <image src="/images/safety/mianrao.png" mode="widthFix"></image>
+            <text>{{obj.name}}</text>
+       </view>
+      <view class="week">
+          <view class="inner txt" data-target="weekStyle" style="display: flex;flex-direction:row;{{weekStyle}}" bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE">
+            <view class="day {{obj.week.d6}}" data-target="weekStyle"><text>日</text></view>
+            <view class="day {{obj.week.d0}}" data-target="weekStyle"><text>一</text></view>
+            <view class="day {{obj.week.d1}}" data-target="weekStyle"><text>二</text></view>
+            <view class="day {{obj.week.d2}}" data-target="weekStyle"><text>三</text></view>
+            <view class="day {{obj.week.d3}}" data-target="weekStyle"><text>四</text></view>
+            <view class="day {{obj.week.d4}}" data-target="weekStyle"><text>五</text></view>
+            <view class="day {{obj.week.d5}}" data-target="weekStyle"><text>六</text></view>
+          </view>
+          <view class="inner mod" bindtap="weekModify" data-week="{{obj.week}}">修改</view>
+      </view>
+      <view class="unit" wx:for="{{obj.timeList}}" wx:key="{{index}}">
+        <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE"  style="{{item.txtStyle}}" class="inner txt">
+          <view class="cell-1" data-idx="{{idx}}" data-index="{{index}}">{{item.name}}</view>
+          <view class="cell-2" data-idx="{{idx}}" data-index="{{index}}">{{item.time}}</view>
+        </view>
+        <view class="inner mod" bindtap="timeUpdate" data-place="{{index+1}}" data-time="{{item.time}}" style="right:180rpx;">修改</view>
+        <view class="inner del"  bindtap="timedel" data-place="{{index+1}}">删除</view>
+      </view>
+    </block>
+    <modal class="modal" hidden="{{modalFlag}}" title="{{title}}" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="timesave"> 
+        <view class="form-unit" style="margin-top:20rpx;">
+          <view class="txt"><image src="/images/common/time.png" style="width:44rpx;height:44rpx;margin-bottom:-6rpx;"></image> 开始时间</view>
+          <view class="content">
+              <picker mode="time" value="{{stime}}" start="00:00" end="23:59" bindchange="bindStartTimeChange">
+                <view class="picker">
+                  <view style="width:100%;height:65rpx;">{{stime}}</view>
+                </view>
+              </picker>
+          </view>
+        </view>
+        <view class="form-unit">
+          <view class="txt"><image src="/images/common/time.png" style="width:44rpx;height:44rpx;margin-bottom:-6rpx;"></image> 结束时间</view>
+          <view class="content">
+              <picker mode="time" value="{{etime}}" start="00:00" end="23:59" bindchange="bindEndTimeChange">
+                <view class="picker">
+                  <view style="width:100%;height:65rpx;">{{etime}}</view>
+                </view>
+              </picker>
+          </view>
+        </view>
+        <view style="width:100%;height:50rpx;"></view>
+    </modal> 
+     <modal class="modal" hidden="{{weekModalFlag}}" title="修改星期" confirm-text="保存" cancel-text="取消" bindcancel="cancel" bindconfirm="weeksave"> 
+       <view class="week" style="display: flex;flex-direction:row;">
+            <view class="day {{week.d6}}" data-id="d6" bindtap="weektap" style="width:14%;"><text>日</text></view>
+            <view class="day {{week.d0}}" data-id="d0" bindtap="weektap" style="width:14%;"><text>一</text></view>
+            <view class="day {{week.d1}}" data-id="d1" bindtap="weektap" style="width:14%;"><text>二</text></view>
+            <view class="day {{week.d2}}" data-id="d2" bindtap="weektap" style="width:14%;"><text>三</text></view>
+            <view class="day {{week.d3}}" data-id="d3" bindtap="weektap" style="width:14%;"><text>四</text></view>
+            <view class="day {{week.d4}}" data-id="d4" bindtap="weektap" style="width:14%;"><text>五</text></view>
+            <view class="day {{week.d5}}" data-id="d5" bindtap="weektap" style="width:14%;"><text>六</text></view>
+      </view>
+        <view style="width:100%;height:50rpx;"></view>
+    </modal> 
+    <!--<view class="add {{isShow}}" bindtap="addtap">
+        <image src="/images/common/addTime.png"></image>
+        <text style="margin-left:4rpx;">添加</text>
+    </view>-->
+    <image src="/images/classShow/add.png" class="addImg {{isShow}}" bindtap="addtap"></image>
+  </block>
+</view>

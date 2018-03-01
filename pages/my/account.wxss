@@ -1,0 +1,25 @@
+.header {
+  width:750rpx;
+  height: 110px;
+  background-color: #f08537;
+  box-shadow: 0 2px 2px #f08537; /*底边阴影*/
+}
+.center {
+  width:750rpx;
+  background-color: #fff;
+}
+.center .unit {
+  width:690rpx;
+  margin:30rpx;
+  border: 1px #EBEBEB solid;
+  border-radius: 5px;
+  box-shadow: 0 -5px 5px #EBEBEB, /*顶部阴影*/  
+    0 5px 5px #EBEBEB; /*底边阴影*/
+  background-color: #fff;
+}
+.center .unit .box {
+  width:650rpx;
+  margin:0 20rpx;
+  border-bottom:1px #ddd solid;
+  padding:10px 0;
+}

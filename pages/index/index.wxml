@@ -1,0 +1,183 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;padding-bottom:50px;">
+  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="3000" duration="1000">  
+      <swiper-item>  
+        <image src="http://ohg2r16nq.bkt.clouddn.com/image/banner/index/banner1.png" class="slide-image" mode="scaleToFill"/>  
+      </swiper-item> 
+      <swiper-item>  
+        <image src="http://ohg2r16nq.bkt.clouddn.com/image/banner/index/banner2.png" class="slide-image" mode="scaleToFill"/>  
+      </swiper-item>  
+      <swiper-item>  
+        <image src="http://ohg2r16nq.bkt.clouddn.com/image/banner/index/banner3.png" class="slide-image" mode="scaleToFill"/>  
+      </swiper-item>   
+  </swiper>
+  <loading hidden="{{hiddenLoading}}">加载中</loading>
+  <view class="center">
+      <view class="unit" style="padding:15px 0;">
+          <view class="box" style="position: relative;" data-url="../safety/map" data-id="1" bindtap="appTap">
+            <image src="/images/index/xsaq.png" style="width:60rpx;height:65rpx;"></image>
+            <view style="margin-top:10px;">学生安全</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:40px;position: absolute;bottom:15px;right:0;"></image>
+          </view>
+          <view class="box" style="position: relative;" bindtap="appTap" data-url="../live/index" data-id="2">
+              <image src="/images/index/ktzb.png" style="width:65rpx;height:65rpx;" ></image>
+              <view style="margin-top:10px;">课堂直播</view>
+              <image src="/images/index/line-long.png" style="width:1px;height:40px;position: absolute;bottom:15px;right:0;"></image>
+          </view>
+          <view class="box" bindtap="appTap" data-url="../homework/teacher/index" data-id="3">
+              <image src="/images/index/jtzy.png" style="width:60rpx;height:65rpx;" ></image>
+              <view style="margin-top:10px;">家庭作业</view>
+          </view>
+      </view>
+      <view style="width:750rpx;">
+          <image src="/images/index/lg.png" style="width:690rpx;margin:0 30rpx;"  mode="widthFix"></image>
+      </view>
+      <view class="menu" style="padding:15px 0;margin-top:-13px;" wx:if="{{choseInfo.roleId == 'D'}}">
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-url="../news/news" data-id="4">
+            <image src="/images/index/xyzx.png" style="width:40%;" mode="widthFix"></image>
+            <view>校园资讯</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-url="../parents/list" data-id="5">
+            <image src="/images/index/jzxx.png" style="width:40%;" mode="widthFix"></image>
+            <view>家长学校</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" bindtap="appTap" data-url="../schoolShow/schoolInfo" data-id="6">
+            <image src="/images/index/xyfc.png" style="width:40%;" mode="widthFix"></image>
+            <view>校园风采</view>
+          </view>
+          <view class="line">
+            <image src="/images/index/line1.png" style="width:650rpx;margin:0 20rpx;position: absolute;top:-2px;left:0;" mode="widthFix"></image>
+          </view>
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-url="../contact/contactList" data-id="7">
+            <image src="/images/index/txl.png" style="width:40%;" mode="widthFix"></image>
+            <view>通讯录</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:120px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-url="../classShow/index" data-id="8">
+            <image src="/images/index/bjq.png" style="width:40%;" mode="widthFix"></image>
+            <view>班级圈</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:120px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block"  bindtap="appTap" data-id="9" data-url="../pay/pay">
+            <image src="/images/index/jf.png" style="width:40%;" mode="widthFix"></image>
+            <view>缴费</view>
+          </view>
+          <view class="line">
+            <image src="/images/index/line1.png" style="width:650rpx;margin:0 20rpx;position: absolute;top:-2px;left:0;" mode="widthFix"></image>
+          </view>
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-id="15" data-url="../kaoqin/teacher/index">
+            <image src="/images/index/xskq.png" style="width:40%;" mode="widthFix"></image>
+            <view>学生考勤</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+          <!--<view class="block" style="position: relative;" bindtap="appTap" data-id="11">
+            <image src="/images/index/sc.png" style="width:40%;" mode="widthFix"></image>
+            <view>教育商城</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+          <view class="block"  bindtap="appTap" data-id="12">
+            <image src="/images/index/kcb.png" style="width:40%;" mode="widthFix"></image>
+            <view>课程表</view>
+          </view>-->
+          <!--<view class="block" style="position: relative;" bindtap="appTap" data-id="10" data-url="../support/support">
+            <image src="/images/index/fwzc.png" style="width:40%;" mode="widthFix"></image>
+            <view>服务支持</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>-->
+          <view class="block" style="position: relative;" bindtap="appTap" data-id="16" data-url="../kcb/parents/index">
+            <image src="/images/index/kcb.png" style="width:40%;" mode="widthFix"></image>
+            <view>课程表</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+          <!--<view class="block" style="position: relative;" bindtap="appTap" data-id="11"  data-url="../my/account">
+            <image src="/images/index/zh.png" style="width:40%;" mode="widthFix"></image>
+            <view>账户</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>-->
+          <view class="block"  bindtap="appTap" data-id="12" data-url="../setting/index">
+            <image src="/images/index/sz.png" style="width:40%;" mode="widthFix"></image>
+            <view>设置</view>
+          </view>
+      </view>
+      <view class="menu" style="padding:15px 0;margin-top:-13px;" wx:if="{{choseInfo.roleId != 'D'}}">
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-url="../news/news" data-id="4">
+            <image src="/images/index/xyzx.png" style="width:40%;" mode="widthFix"></image>
+            <view>校园资讯</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-url="../parents/list" data-id="5">
+            <image src="/images/index/jzxx.png" style="width:40%;" mode="widthFix"></image>
+            <view>家长学校</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" bindtap="appTap" data-url="../schoolShow/schoolInfo" data-id="6">
+            <image src="/images/index/xyfc.png" style="width:40%;" mode="widthFix"></image>
+            <view>校园风采</view>
+          </view>
+          <view class="line">
+            <image src="/images/index/line1.png" style="width:650rpx;margin:0 20rpx;position: absolute;top:-2px;left:0;" mode="widthFix"></image>
+          </view>
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-url="../contact/contactList" data-id="7">
+            <image src="/images/index/txl.png" style="width:40%;" mode="widthFix"></image>
+            <view>通讯录</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:120px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-url="../classShow/index" data-id="8">
+            <image src="/images/index/bjq.png" style="width:40%;" mode="widthFix"></image>
+            <view>班级圈</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:120px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <view class="block" bindtap="appTap" data-id="15" data-url="../kaoqin/teacher/index">
+            <image src="/images/index/xskq.png" style="width:40%;" mode="widthFix"></image>
+            <view>学生考勤</view>
+          </view>
+          <view class="line">
+            <image src="/images/index/line1.png" style="width:650rpx;margin:0 20rpx;position: absolute;top:-2px;left:0;" mode="widthFix"></image>
+          </view>
+          <view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-id="10" data-url="../support/support">
+            <image src="/images/index/fwzc.png" style="width:40%;" mode="widthFix"></image>
+            <view>服务支持</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-url="{{choseInfo.roleId=='A'?'../kcb/schoolmaster/schedule':'../kcb/teacher/index'}}" data-id="16">
+            <image src="/images/index/kcb.png" style="width:40%;" mode="widthFix"></image>
+            <view>课程表</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:120px;position: absolute;bottom:0;right:0;"></image>
+          </view>
+          <!--<view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-id="11">
+            <image src="/images/index/sc.png" style="width:40%;" mode="widthFix"></image>
+            <view>教育商城</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+          <view class="block" style="position: relative;" bindtap="appTap" data-id="12">
+            <image src="/images/index/kcb.png" style="width:40%;" mode="widthFix"></image>
+            <view>课程表</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>-->
+          <!--<view class="block" style="margin-left:12rpx;position: relative;" bindtap="appTap" data-id="11" data-url="../my/account">
+            <image src="/images/index/zh.png" style="width:40%;" mode="widthFix"></image>
+            <view>账户</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>-->
+          <view class="block" style="position: relative;" bindtap="appTap" data-id="12" data-url="../setting/index">
+            <image src="/images/index/sz.png" style="width:40%;" mode="widthFix"></image>
+            <view>设置</view>
+            <image src="/images/index/line-long.png" style="width:1px;height:60px;position: absolute;top:-10px;right:0;"></image>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../index/main">
+            <image src="/images/index/shouye-active.png" style="width:24px;" mode="widthFix"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" style="position:relative;" data-url="../message/list">
+            <image src="/images/index/message.png" style="width:24px;" mode="widthFix"></image>
+            <text wx:if="{{messageCount > 0}}" class="new">{{messageCount>99?('99+'):messageCount}}</text>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../my/index">
+            <image src="/images/index/my.png" style="width:24px;" mode="widthFix"></image>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+<view class="container" style="background-color:#fff;padding-bottom:65px;">
+  <view class="header">
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/schoolInfo">学校介绍</view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/teacherShow">教师风采</view>
+      <view class="menu" bindtap="menutap" data-url="../schoolShow/honorShow">荣誉墙</view>
+      <view class="menu active" bindtap="menutap" data-url="../schoolShow/mail">校长信箱<view></view></view>
+  </view>
+  <!--<view class="add-panel" bindtap="addtap" wx:if="{{choseInfo.roleId!='A'}}">
+        <view class="left">
+          <image src="/images/support/addTime.png" style="width:35px;height:35px;"></image>
+        </view>
+        <view class="right">
+           发布
+        </view>
+  </view>-->
+  <image src="/images/classShow/add.png" class="addImg" bindtap="addtap" wx:if="{{choseInfo.roleId!='A'}}"></image>
+  <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+  <view class="center" wx:if="{{list.length > 0}}">
+      <view class="unit">
+          <view class="row" bindtap="infotap" wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx" data-id="{{item.id}}">
+              <view class="top">
+                  <view class="top-1">
+                      <image src="{{item.isHide == 1?'/images/common/niming.png':item.avatarUrl}}" style="border-radius: 50%;width:42px;" mode="widthFix"></image>
+                  </view>
+                  <view class="top-2">
+                      <view>{{item.isHide == 1?"匿名":(item.roleId == 'D' ? (item.username+'的'+item.relation) : item.username)}}<text class="CE" wx:if="{{item.isHide == 2}}">{{item.roleName}}</text><text wx:if="{{item.isHide == 2}}"> {{item.className}}</text></view>
+                      <view>{{item.createTime}}</view>
+                  </view>
+              </view>
+              <view class="content">{{item.content}}</view>
+              <view class="footer">
+                  <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" class="cell">
+                      <image src="{{img}}" style="width:210rpx;height:210rpx;"></image>
+                  </view>
+              </view>
+              <view class="{{item.show}}">...</view>
+              <view style="width:86%;text-align:right;padding:10px 7%;">{{item.status == 1?'未回复':'已回复'}}</view>
+          </view>
+      </view>
+  </view>
+  
+</view>

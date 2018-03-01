@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit">
+          <view class="box" bindtap="switchtap" data-status="open">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/switch.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/rest">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/zxsd.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">作息时段</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/leave">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/qjxs.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">请假学生</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/absent">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/qqxs.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">缺勤学生</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/later">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/cdxs.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">迟到学生</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/early">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/ztxs.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">早退学生</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+          <view class="box" bindtap="appTap" data-id="1" data-url="../teacher/query">
+              <view style="width:120rpx;text-align:center;">
+                  <image src="/images/kaoqin/search.png" style="width:28px;height:28px;margin-top:12px;" mode="widthFix"/>
+              </view>
+              <view style="width:370rpx;text-align:left;">记录查询</view>
+              <view style="width:160rpx;text-align:right;">
+                  <image src="/images/my/icon-arrow.png" style="width:10px;height:16px;margin-right:15px;" mode="widthFix"/>
+              </view>
+          </view>
+      </view>
+  </view>
+  <!-- 滑块代码-->
+  <view class="drawer_screen" bindtap="switchtap" data-status="close" wx:if="{{showModalStatus}}"></view> 
+  <view class="slide"  style="height:{{height}}px;" wx:if="{{showModalStatus}}">
+      <view style="text-align:center;border-bottom:1px #ddd solid;height:50px;line-height:50px;">
+          <image src="/images/kaoqin/switch-class.png" style="width:30px;height:30px;margin-bottom:-10px;"></image>
+          选择班级
+      </view>
+      <view wx:for="{{classList}}" wx:key="{{index}}" class="class-unit" bindtap="classtap" data-item="{{item}}">
+          <view style="width:450rpx;text-align:center;">{{item.name}}</view>
+          <view style="width:100rpx;text-align:center;">
+            <image wx:if="{{item.selected}}" src="/images/kaoqin/check.png" style="width:20px;height: 12px;"></image>
+          </view>
+      </view>
+  </view>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../teacher/index">
+            <image src="/images/kaoqin/kq-active.png" style="width:24px;height: 40px;"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../teacher/leaveList">
+            <image src="/images/kaoqin/qj.png" style="width:24px;height: 40px;"></image>
+      </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view class="container" style="background-color:#fff;">
+  <view class="header">
+      <picker mode="date" value="{{time}}" start="2017-01-01" end="{{edate}}"  bindchange="startDateChange">
+        <view class="picker">
+          <text style="margin-right:10px;">{{time}}</text>
+          <image src="/images/kaoqin/rili.png" style="width:26px;height:26px;margin-right:20px;margin-top:10px;float:right;"></image>
+        </view>
+      </picker>
+  </view>
+  <view wx:if="{{list.length == 0}}" class="no-data">【暂无数据】</view>
+  <view class="unit" wx:for="{{list}}" wx:key="{{index}}">
+    <view bindtouchstart="touchS" bindtouchmove="touchM" bindtouchend="touchE" style="{{item.txtStyle}}" class="inner txt">
+        <view class="cell-1" data-index="{{index}}"><image src="/images/kaoqin/xiaohai.png"></image></view>
+        <view class="cell-2" data-index="{{index}}">{{item.studentName}}</view>
+        <view class="cell-3" data-index="{{index}}">{{item.type}}</view>
+    </view>
+    <view class="inner mod" bindtap="sendtap" data-id="{{item.id}}" data-index="{{index}}" style="right:180rpx;">发送家长</view>
+    <view class="inner del" bindtap="confirmtap" data-id="{{item.imei}}" data-index="{{index}}">确认到校</view>
+  </view>
+</view>

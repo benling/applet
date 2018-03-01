@@ -1,0 +1,31 @@
+.unit {
+  width:750rpx;
+  height: 40px;
+  line-height: 40px;
+  background-color: #fff;
+}
+.unit image {
+  width:24px;
+	margin:0 5px 0 12px;
+  margin-bottom: -10rpx;
+}
+.form-unit {
+	width:100%;
+	height:80rpx;
+  line-height: 80rpx;
+  margin-top: 2rpx;
+  position: relative;
+  border-bottom: 2rpx #ddd solid;
+  display: flex;
+  flex-direction:row;
+}
+.form-unit .txt{
+	width:40%;
+}
+.form-unit .content{
+	width:60%;
+  text-align: right;
+}
+.form-unit .content input{
+  margin-top: 15rpx;
+}

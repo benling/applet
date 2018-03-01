@@ -1,0 +1,46 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;padding-bottom:65px;">
+    <view class="header">
+      <view class="menu" bindtap="menutap" data-url="../classShow/classStyle">班级动态</view>
+      <view class="menu active" bindtap="menutap" data-url="../classShow/myStyle">我的动态<view></view></view>
+    </view>
+    <view wx:if="{{list.length == 0}}" class="no-data" style="background-color:#fff;">【暂无数据】</view>
+    <view class="center" wx:if="{{list.length > 0}}">
+      <view class="unit">
+            <view class="row"  bindtap="unittap" wx:for="{{list}}" wx:key="{{index}}" wx:for-index="idx" data-item="{{item}}">
+              <view class="top">
+                  <view class="top-1">
+                      <image src="{{item.avatarUrl}}" style="border-radius: 50%;width:48px;height:48px;" mode="widthFix"></image>
+                      <view class="user-info">
+                        <view>
+                          {{item.username}}{{item.roleId == 'D' ? '的'+item.relation : ''}}<text class="CE">{{item.roleName}}</text>
+                        </view>
+                        <view>
+                          <text>{{item.className}}</text>
+                          <block wx:if="{{item.isHide == 1}}">
+                            <image src="/images/classShow/pb.png" class="hide-img"></image>
+                          </block>
+                          <image src="/images/classShow/del.png" catchtap="deltap" class="hide-img" data-id="{{item.id}}"></image>
+                        </view>
+                      </view>
+                  </view>
+              </view>
+              <view class="content">{{item.partContent}}</view>
+              <view class="footer">
+                  <view wx:for="{{item.imgList}}" wx:key="{{index}}" wx:for-item="img" class="cell">
+                      <image src="{{img}}" style="width:80px;height:80px;"></image>
+                  </view>
+              </view>
+              <view class="{{item.show}}">...</view>
+              <view style="text-align:right;padding:15px;">
+                <text style="float:left;">{{item.createTime}}</text>
+                <image src="{{item.likeCount>0?'/images/common/xin1.png':'/images/common/xin.png'}}" class="like-icon"></image>
+                <text style="margin-right:30px;"> {{item.likeCount}}</text>
+                <image src="{{item.commentCount>0?'/images/common/c1.png':'/images/common/c.png'}}" class="com-icon"></image>
+                 {{item.commentCount}}
+              </view>
+          </view>
+      </view>
+    </view>
+    <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+</view>

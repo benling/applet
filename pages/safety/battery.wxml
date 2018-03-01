@@ -1,0 +1,4 @@
+<view class="container" style="height:{{height}}px;text-align:center;">
+    <image src="/images/safety/dianliang.png" mode="widthFix"></image>
+    <view class="num">学生设备的电量剩余{{batteryNum}}%</view>
+</view>

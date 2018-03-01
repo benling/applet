@@ -1,0 +1,30 @@
+.bottom {
+  width:100%;
+  position:fixed;
+  bottom:0;
+  right:0;
+  height:45px;
+  line-height:45px;
+  vertical-align: middle;
+  background-color: #fff;
+  border-top:1px #ddd solid;
+}
+.bottom .menu {
+  float:left;
+  width:50%;
+  text-align:center;
+}
+.unit {
+  background-color:#fff;
+	width:100%;
+	height:45px;
+  line-height: 45px;
+  margin-top: 1px;
+}
+.unit image {
+  width:21px;
+	height: 21px;
+	margin:0 15px;
+  position: relative;
+  top:3px;
+}

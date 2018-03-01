@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+      <view class="unit">
+            <video id="myVideo" src="{{item.hlsHd}}" autoplay controls bindtimeupdate="timeupdate" poster="http://ohg2r16nq.bkt.clouddn.com/play.png" style="width:700rpx;height:225px;margin:25rpx;"></video>
+      </view>
+</view>

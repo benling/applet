@@ -1,0 +1,48 @@
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;" wx:if="{{showpage}}">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit" style="padding-bottom:40px;">
+          <view class="header">
+            <scroll-view scroll-x style="width: 100%;white-space: nowrap;overflow: auto;" scroll-into-view="{{toView}}">
+               <view class="box" bindtap="daytap" wx:for="{{days}}" wx:key="{{index}}" id="day{{index}}" data-index="{{index}}">
+                  <view class="week">{{item.week}}</view>
+                  <view class="day {{item.status == 1?'today':''}} {{item.checked?'active':''}}">{{item.date}}</view>
+               </view>
+            </scroll-view>
+          </view>
+          <view class="title">
+              {{dateStr}} <text style="color:#f99b58;">课程安排表</text>
+          </view>
+          <view style="width:650rpx;margin:20rpx;text-align:center;" wx:if="{{list.length == 0}}">暂无数据</view>
+          <view class="kc" wx:for="{{list}}"  wx:key="{{index}}" bindtap="detailTap" data-index="{{index}}" style="background-color:{{item.bgcolor}};{{item.type == 2?'width:570rpx;':''}}">
+              <block wx:if="{{item.type == 1}}">
+              【{{item.startTime}}~{{item.endTime}}】{{item.subjectName}} {{item.teacherName}}
+              </block>
+              <block wx:if="{{item.type == 2}}">
+              【{{item.startTime}}~{{item.endTime}}】{{item.className}}
+              <image src="/images/kcb/bianji.png" catchtap="updatetap" data-index="{{index}}" class="updateImg"></image>
+              <image src="/images/support/delete.png" catchtap="deltap" data-index="{{index}}" class="deleteImg"></image>
+              </block>
+              <block wx:if="{{item.remark}}">
+                  <view class="{{item.dotClass}}" style="{{item.dotStyle}}display:{{item.open?'block;':'none;'}}"></view>
+                  <view class="tip" style="{{item.tipStyle}}background-color: {{item.bgcolor}};display:{{item.open?'block;':'none;'}}">
+                      {{item.remark}}
+                  </view>
+              </block>
+          </view>
+          
+      </view>
+  </view>
+  <modal class="modal" hidden="{{modalFlag}}" title=""  confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="updateSchedule"> 
+        <textarea bindblur="textBlur" class="area" value="{{remark}}"  placeholder="请输入备注..." maxlength="64"/>
+  </modal> 
+  <image src="/images/classShow/add.png" class="addImg" bindtap="addtap"></image>
+  <view class="bottom">
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/index">
+            <image src="/images/kcb/today-active.png" style="width:45px;height: 40px;"></image>
+      </view>
+      <view class="menu" bindtap="bottomMenuTap" data-url="../parents/schedule">
+            <image src="/images/kcb/kcb.png" style="width:42px;height: 40px;"></image>
+      </view>
+  </view>
+</view>

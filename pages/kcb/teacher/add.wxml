@@ -1,0 +1,144 @@
+<view class="container" style="background-color:#fff;" wx:if="{{shwoPage}}">
+<form bindsubmit="formSubmit">
+  <view class="center" style="padding-bottom:50px;">
+      <view class="unit">
+          <view class="box" wx:if="{{choseInfo.roleId == 'B'}}">
+              <view style="width:200rpx;">学校名称</view>
+              <view style="width:450rpx;">
+                  <picker bindchange="schoolChange" value="{{sindex}}" range="{{schoolList}}">
+                    <view class="picker">
+                      <view style="width:420rpx;height:50px;text-align:right;padding-right:30rpx;">{{schoolList[sindex]}}</view>
+                    </view>
+                  </picker>
+              </view>
+          </view>
+          <block wx:if="{{sindex == 0}}">
+              <view class="box">
+                  <view style="width:120rpx;">班级</view>
+                  <view style="width:500rpx;">
+                      <picker bindchange="classChange" value="{{cindex}}" range="{{classList}}" range-key="name">
+                        <view class="picker">
+                          <view style="width:500rpx;height:50px;text-align:right;padding-right:30rpx;">{{classList[cindex].name}}</view>
+                        </view>
+                      </picker>
+                  </view>
+              </view>
+              <view class="weeks-view">
+                  <view class="week">一</view>
+                  <view class="week">二</view>
+                  <view class="week">三</view>
+                  <view class="week">四</view>
+                  <view class="week">五</view>
+                  <view class="week">六</view>
+                  <view class="week">日</view>
+              </view>
+              <view class="sub-view" wx:for="{{rows}}" wx:key="{{index}}">
+                  <view style="width:690rpx;display: flex;flex-direction: row;padding-bottom:5px;">
+                        <picker mode="time" value="{{item.stime}}" data-row="{{index}}" start="00:00" end="23:59" bindchange="rowStartTimeChange">
+                          <view class="picker">
+                            <view class="row-start-time">{{item.stime?item.stime:'上课时间'}}</view>
+                          </view>
+                        </picker>
+                        <view style="width:30rpx;text-align:center;">~</view>
+                        <picker mode="time" value="{{item.etime}}" data-row="{{index}}" start="00:00" end="23:59" bindchange="rowEndTimeChange">
+                            <view class="picker">
+                              <view class="row-end-time">{{item.etime?item.etime:'下课时间'}}</view>
+                            </view>
+                        </picker>
+                  </view>
+                  <view style="display: flex;flex-direction: row;">
+                      <view class="sub" wx:for="{{item.list}}" wx:key="{{index}}" wx:for-index="colIndex" wx:for-item="colItem">
+                          <picker bindchange="subChange" data-row="{{index}}" data-col="{{colIndex}}" value="{{colItem}}" range="{{subList}}" range-key="name">
+                            <view class="picker">
+                              <view class="sub-unit">{{subList[colItem].name}}</view>
+                            </view>
+                          </picker>
+                      </view>
+                      <view style="width:60rpx;text-align:center;">
+                            <image src="/images/support/delete.png" bindtap="delRowTap" data-index="{{index}}" class="deleteImg" style="margin-top:5px;"></image>
+                      </view>
+                  </view>
+              </view>
+              <view style="margin:10px;">
+                  <image src="/images/common/addTime.png" bindtap="addRowTap" style="width:30px;height:30px;"></image>
+              </view>
+          </block>
+          <block wx:if="{{sindex == 1}}">
+              <view class="box">
+                  <view style="width:120rpx;">标题</view>
+                  <view style="width:500rpx;text-align：right;padding-right:30rpx;">
+                      <input class="input" placeholder="请输入标题" bindinput="titleInput" maxlength="8" style="padding:10px;width:100%;border:none;"/>
+                  </view>
+              </view>
+              <view style="width:650rpx;height:130px;margin: 0 20rpx;margin-top:10px;">
+                  <textarea bindblur="textBlur" class="area"  placeholder="请输入备注..." maxlength="64" />
+              </view>
+              <view class="box">
+                  <view style="width:160rpx;">类型</view>
+                  <view style="width:460rpx;text-align：right;padding-right:30rpx;">
+                      <radio-group class="radio-group" bindchange="radioChange">
+                        <label class="radio">
+                          <radio value="1" checked="checked"/>临时
+                        </label>
+                        <label class="radio" style="margin-left:30px;">
+                          <radio value="2"/>周期
+                        </label>
+                      </radio-group>
+                  </view>
+              </view>
+              <view class="box" wx:if="{{classType == 1}}">
+                  <view style="width:120rpx;">日期</view>
+                  <view style="width:500rpx;">
+                      <picker mode="date" value="{{classDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="classDateChange">
+                        <view class="picker">
+                          <view style="width:500rpx;height:50px;text-align:right;padding-right:30rpx;">{{classDate}}</view>
+                        </view>
+                      </picker>
+                  </view>
+              </view>
+              <view class="select-view" wx:if="{{classType == 1 && dateList.length > 0}}">
+                  <view style="width:120rpx;padding-top:8px;">已选</view>
+                  <view style="width:550rpx;">
+                      <view class="date-unit" wx:for="{{dateList}}" wx:key="{{index}}">
+                      {{item}}
+                      <image src="/images/support/delete.png" bindtap="deltap" data-index="{{index}}" class="deleteImg"></image>
+                      </view>
+                  </view>
+              </view>
+              <view class="weeks-view" wx:if="{{classType == 2}}">
+                  <view class="week"><view class="{{weekObj.w0==1?'active':''}}" data-index="0" bindtap="weektap">一</view></view>
+                  <view class="week"><view class="{{weekObj.w1==1?'active':''}}" data-index="1" bindtap="weektap">二</view></view>
+                  <view class="week"><view class="{{weekObj.w2==1?'active':''}}" data-index="2" bindtap="weektap">三</view></view>
+                  <view class="week"><view class="{{weekObj.w3==1?'active':''}}" data-index="3" bindtap="weektap">四</view></view>
+                  <view class="week"><view class="{{weekObj.w4==1?'active':''}}" data-index="4" bindtap="weektap">五</view></view>
+                  <view class="week"><view class="{{weekObj.w5==1?'active':''}}" data-index="5" bindtap="weektap">六</view></view>
+                  <view class="week"><view class="{{weekObj.w6==1?'active':''}}" data-index="6" bindtap="weektap">日</view></view>
+              </view>
+              <view class="box">
+                  <view style="width:200rpx;">开始时间</view>
+                  <view style="width:450rpx;">
+                      <picker mode="time" value="{{stime}}" start="00:00" end="23:59" bindchange="startTimeChange">
+                        <view class="picker">
+                          <view style="width:420rpx;height:50px;text-align:right;padding-right:30rpx;">{{stime}}</view>
+                        </view>
+                      </picker>
+                  </view>
+              </view>
+              <view class="box">
+                  <view style="width:200rpx;">结束时间</view>
+                  <view style="width:450rpx;">
+                      <picker mode="time" value="{{etime}}" start="00:00" end="23:59" bindchange="endTimeChange">
+                        <view class="picker">
+                          <view style="width:420rpx;height:50px;text-align:right;padding-right:30rpx;">{{etime}}</view>
+                        </view>
+                      </picker>
+                  </view>
+              </view>
+          </block>
+      </view>
+      <view style="text-align:center;padding-top:30px;">
+          <button type="primary" form-type="submit" style="width:163px;" disabled="{{disabled}}">保存</button>
+      </view>
+   </view>
+  </form>
+</view>

@@ -1,0 +1,20 @@
+<view class="container" style="background-color:#fff;padding-bottom:20px;">
+  <view wx:if="{{list.length == 0}}" class="no-data">【暂无数据】</view>
+  <view class="unit-view" wx:for="{{list}}" wx:key="{{index}}"  data-id="{{item.id}}">
+      <view class="time"><text style="background-color:#E4E4E4;padding:10rpx;border-radius: 5px;">{{item.cnCreateTime}}</text></view>
+      <view class="content">
+          <view class="title">{{item.title}}<text wx:if="{{item.status == 2}}" class="new"></text></view>
+          <view style="padding:10px 30rpx;">{{item.createTime}}</view>
+          <!--<view class="img">
+              <image src="https://img6.bdstatic.com/img/image/smallpic/xiaoqingxbanq.jpg" style="width:100%;" mode="widthFix"></image>
+          </view>-->
+          <view class="msg">{{item.context}}</view>
+          <view class="read-all" bindtap="detailtap" data-id="{{item.id}}">
+              <view class="cell-1">阅读全文</view>
+              <view class="cell-2">
+                  <image src="/images/message/icon_arrow.png" style="width:25rpx;float:right;" mode="widthFix"></image>
+              </view>
+          </view>
+      </view>
+  </view>
+</view>

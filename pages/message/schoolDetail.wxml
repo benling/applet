@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="title">{{item.title}}</view>
+    
+    <view class="msg">{{item.context}}</view>
+    <view style="padding-left:30rpx; background-color: #fff;display: flex;flex-direction: row;font-size:12px;">
+      <view style="width:400rpx;color:#989898;">发送人：{{item.sendName == '' ? '管理员' : item.sendName}}
+        <text class="CE" wx:if="{{item.sendName != ''}}">{{item.roleName}}</text>
+      </view>
+      <view style="width:300rpx;text-align:right;color:#989898;">{{item.createTimeStr}}</view>
+    </view>
+    <view style="background-color: #fff;display: flex;flex-direction: row;padding:10px 0;border-bottom:1px #ddd solid;">
+      <view style="width:500rpx;text-align:left;padding-left:30rpx;font-size:12px;color:#989898;">接收者：{{item.receiveName}}<text class="CE" wx:if="{{item.receiveRoleName}}">{{item.receiveRoleName}}</text>{{item.receiveRange}}
+      </view>
+      <view style="width:220rpx;text-align:right;">
+        <image src="/images/common/c.png" class="com-icon" bindtap="commenttap" data-status="open" style="float:right;"></image>
+      </view>
+    </view>
+    <view class="row" wx:for="{{commentList}}" wx:key="{{index}}" wx:for-item="comment">
+        <view class="top">
+            <view class="top-1">
+                <image src="{{comment.avatarUrl}}" style="border-radius: 50%;width:42px;height:42px;" mode="widthFix"></image>
+                <view class="user-info">
+                  <view>
+                    {{comment.username}}{{comment.roleId == 'D' ? '的'+comment.relation : ''}}<text class="CE">{{comment.roleName}}</text>
+                    <text style="margin-left:5px;">{{comment.className}}</text>
+                  </view>
+                  <view>{{comment.createTime}}</view>
+              </view>
+            </view>
+        </view>
+        <view class="content">{{comment.content}}</view>
+    </view>
+</view>
+ <!-- 滑块代码-->
+  <view class="drawer_screen" bindtap="commenttap" data-status="close" wx:if="{{showModalStatus}}"></view> 
+  <view class="slide" wx:if="{{showModalStatus}}">
+     <textarea bindblur="textBlur" fixed="true" style="width:92%;height:120px;border:1px #ddd solid;margin:2%;padding:2%;"  placeholder="说点什么..." maxlength="256" />
+     <button type="primary" size="mini" style="width:40%;margin:10px 30%;" disabled="{{disabled}}" bindtap="addcomment">回复</button>
+  </view>

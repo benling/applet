@@ -1,0 +1,35 @@
+.header {
+  background-color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px #ddd solid;
+  text-align: center;
+}
+.unit {
+  background-color:#fff;
+	width:750rpx;
+	height:40px;
+  line-height: 40px;
+  border-bottom:1px #ddd solid;
+  display: flex;
+  flex-direction: row;
+}
+.unit image {
+  width:25px;
+	height: 25px;
+	margin:0 30rpx;
+  position: relative;
+  top:7px;
+}
+
+.cell-1 {
+  width:120rpx;
+}
+.cell-2 {
+  width:330rpx;
+}
+.cell-3 {
+  width:280rpx;
+  text-align: right;
+  padding-right:20rpx;
+}

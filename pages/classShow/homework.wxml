@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+        <view class="count">
+            <view class="number">{{item.rate}}%</view>
+            <view class="text">上周完成率</view>
+        </view>
+        <block wx:if="{{choseInfo.roleId != 'D'}}">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{classList}}" range-key="name">
+              <view class="picker">
+                  <view class="user-class">{{classList[index].name}}
+                  <image src="/images/classShow/chose.png" style="width:15px;height:15px;margin-bottom:-2px;"></image>
+                  </view>
+              </view>
+            </picker>
+        </block>
+         <block wx:if="{{choseInfo.roleId == 'D'}}">
+            <view class="user-class">
+            {{classList[0].name}}
+            </view>
+        </block>
+        
+    </view>
+    <view class="message">
+        <view style="width:375rpx;color:#fff;">已完成:{{item.commitCount}}份</view>
+        <view style="width:375rpx;color:#fff;">未完成:{{item.notCommitCount}}份</view>
+    </view>
+    <view class="center">
+      <view class="unit" wx:if="{{item.rate > 0}}">
+           <view style="width:650rpx;padding:20rpx;">上周星星排行榜<text style="font-size:12px;">(每周一更新)</text></view>
+           <block wx:for="{{item.homeworkFinishMarkScoreDtoList}}" wx:key="{{index}}">
+              <view class="ranking">
+                  <view class="img">
+                      <block wx:if="{{index<3}}">
+                        <image src="/images/classShow/zs.png" style="width:14px;height:14px;margin-right:5px;"></image>
+                      </block>
+                      <block wx:if="{{index>2}}">
+                        <view class="sz">{{index+1}}</view>
+                      </block>
+                  </view>
+                  <view class="xingxing" style="width:{{item.width}}rpx;">
+                      {{item.markScore}}颗
+                  </view>
+                  <view class="username">{{item.name}}</view>
+              </view>
+           </block>
+            <view style="width:650rpx;padding:20rpx;">上周作业完成结果:
+              <text wx:if="{{item.rate >= 90}}"  style="color:#589EF9;font-weight:bold;">优秀</text>
+              <text wx:if="{{item.rate >= 60 && item.rate < 90}}" style="color:#589EF9;font-weight:bold;">良好</text>
+              <text wx:if="{{item.rate < 60}}" style="color:#589EF9;font-weight:bold;">较差</text>
+           </view>
+      </view>
+      <view class="unit" wx:if="{{item.rate == 0}}">
+            <view style="text-align:center;padding:30px 0;">暂无排名数据</view>
+      </view>
+    </view>
+</view>

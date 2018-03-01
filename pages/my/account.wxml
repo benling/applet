@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container" style="background-color: #fff;">
+    <view class="header">
+        <view style="text-align:center;color:#fff;padding-top:40px;">支出金额</view>
+        <view style="text-align:center;color:#fff;font-size:24px;margin-top:10px;font-weight:bold;">{{item.fee?item.fee:0}}元</view>
+    </view>
+    <view class="center">
+      <view class="unit">
+          <view class="box">操作记录</view>
+          <view class="box" wx:for="{{item.list}}" wx:key="{{index}}" wx:for-item="obj">
+              <view style="width:650rpx;display: flex;flex-direction: row;">
+                  <view style="width:350rpx;">-{{obj.payFee}}元</view>
+                  <view wx:if="{{obj.payStatus == '1'}}">
+                    <view style="width:300rpx;color:#f08537;text-align:center;">{{obj.result}}</view>
+                  </view>
+                  <view wx:if="{{obj.payStatus == '2'}}">
+                    <view style="width:300rpx;color:#4EB876;text-align:center;">{{obj.result}}</view>
+                  </view>
+                  <view wx:if="{{obj.payStatus == '3' || obj.payStatus == '4'}}">
+                    <view style="width:300rpx;color:#ff0000;text-align:center;">{{obj.result}}</view>
+                  </view>
+              </view>
+              <view style="width:650rpx;display: flex;flex-direction: row;margin-top:6px;">
+                  <view style="width:350rpx;color:#C7C7C7;">{{obj.wareName}}</view>
+                  <view style="width:300rpx;text-align:center;color:#C7C7C7;">{{obj.payTime}}</view>
+              </view>
+          </view>
+      </view>
+      <!--<view class="unit" wx:if="{{item.rate == 0}}">
+            <view style="text-align:center;padding:30px 0;">暂无排名数据</view>
+      </view>-->
+    </view>
+</view>

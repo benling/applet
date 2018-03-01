@@ -1,0 +1,23 @@
+<import src="../../wxParse/wxParse.wxml"/> 
+<!--index.wxml-->
+<view class="container" style="background-color:#fff;">
+  <view style="width:96%;padding:0 2%;word-break:break-all;">
+    <view class="title">{{item.title}}</view>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    <view class="footer">
+        <view class="cell-1">
+            <image src="/images/common/liuan.png" mode="widthFix"></image>
+            <text style="margin-left:15rpx;">{{item.readCount}}</text>
+        </view>
+        <view class="cell-2">
+            <block wx:if="{{item.isLike == 1}}">
+                <image src="/images/common/xin1.png" mode="widthFix"></image>
+            </block>
+            <block wx:else>
+                <image src="/images/common/xin.png" bindtap="liketap" data-id="{{item.id}}" mode="widthFix"></image>
+            </block>
+            <text style="margin-right:80rpx;margin-left:15rpx;">{{item.likeCount}}</text>
+        </view>
+      </view>
+    </view>
+</view>
